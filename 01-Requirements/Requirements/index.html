@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#module-requirements" class="md-skip">
+        <a href="#module-requirements-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -502,9 +502,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#module-requirements" class="md-nav__link">
+  <a href="#module-requirements-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Module Requirements
+      Module Requirements Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#front-arm-subsystem-module-requirements-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Front Arm Subsystem — Module Requirements Table
     </span>
   </a>
   
@@ -791,9 +800,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#module-requirements" class="md-nav__link">
+  <a href="#module-requirements-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Module Requirements
+      Module Requirements Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#front-arm-subsystem-module-requirements-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Front Arm Subsystem — Module Requirements Table
     </span>
   </a>
   
@@ -824,41 +842,78 @@
 
   <h1>Module's Requirements</h1>
 
-<h2 id="module-requirements">Module Requirements</h2>
-<p>The following sections document the requirements that the this module need to fulfills to .....</p>
+<h2 id="module-requirements-overview">Module Requirements Overview</h2>
+<p>This section outlines the key functional and design requirements for the Front Arm Subsystem of the CropScout exploration device. The table below describes the minimum and target performance needed for the front arm to move in a controlled manner, interact safely with its environment, and detect and respond to unsafe conditions to avoid damaging the rover. These requirements help guide decisions in component selection, electrical and firmware design, and overall system integration, while ensuring the module communicates reliably over the UART daisy chain and can be operated remotely through the team’s wireless control system.</p>
+<h2 id="front-arm-subsystem-module-requirements-table">Front Arm Subsystem — Module Requirements Table</h2>
 <table>
 <thead>
 <tr>
 <th><strong>Requirement Description</strong></th>
 <th><strong>Measure of<br> Threshold</strong></th>
 <th><strong>Target<br>Measure</strong></th>
-<th style="text-align: center;"><strong>Stretch<br>Requirement<br>(Y-N)</strong></th>
+<th><strong>Stretch<br>Requirement<br>(Y-N)</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Surface mounted, 3.3V switching power regulatore</td>
-<td>3.2 Volts</td>
-<td>3.3 Volts</td>
-<td style="text-align: center;">No</td>
+<td>Surface-mounted 3.3 V switching regulator powers MCU and logic</td>
+<td>≥ 3.2 V output under load</td>
+<td>Stable 3.3 V regulated output</td>
+<td>No</td>
 </tr>
 <tr>
-<td>Surface mounted microcontroller</td>
-<td>1 PIC or ESP</td>
-<td>8-bit PIC</td>
-<td style="text-align: center;">No</td>
+<td>Microcontroller for motion control and communication (PIC18F47K42, programmed via MPLAB Snap)</td>
+<td>MCU boots and executes basic control loop</td>
+<td>MCC-based firmware with structured messaging and safety logic</td>
+<td>No</td>
 </tr>
 <tr>
-<td>Wireless Communication</td>
-<td>Able to send or receive a Wi-Fi data</td>
-<td>Send and receive Wi-Fi Data to MQTT</td>
-<td style="text-align: center;">Yes</td>
+<td>UART interface to system daisy chain network</td>
+<td>One-way UART messaging</td>
+<td>Two-way command and status messaging</td>
+<td>No</td>
 </tr>
 <tr>
-<td><em>Rest are items your modules needs to support the task you are covering for the team's device.</em></td>
-<td>---</td>
-<td>---</td>
-<td style="text-align: center;"><strong>NO</strong></td>
+<td>Compatibility with wireless control via UART-relayed commands</td>
+<td>Executes commands originating from wireless node</td>
+<td>Supports remote command and telemetry with low latency</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Stepper motor provides base yaw rotation</td>
+<td>≥ 180° rotational sweep</td>
+<td>340° sweep (software-limited)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Stepper motors provide arm articulation</td>
+<td>2 controlled joints</td>
+<td>3 controlled joints</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Stepper motor drivers support selected motors</td>
+<td>Basic motion without stalling at low speed</td>
+<td>Smooth motion under expected mechanical load</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Serial-controlled stepper driver (SPI/I²C/UART) for actuator compliance</td>
+<td>Driver configurable via serial interface</td>
+<td>Fault, current, or status readback available</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Homing or reference sensors for repeatable positioning</td>
+<td>At least one homing switch</td>
+<td>One homing sensor per joint</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Overload or fault response behavior</td>
+<td>Motion stops on fault detection</td>
+<td>Stop, retract to home position, and send error report</td>
+<td>No</td>
 </tr>
 </tbody>
 </table>
