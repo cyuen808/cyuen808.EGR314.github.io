@@ -10,7 +10,6 @@ This block diagram shows how the Front Arm Subsystem for the EGR 314 exploration
 
 
 ## Block Diagram 
-Showing an example of how to import a screenshot of the block diagram created outside of git and brought into a page.
 
 ![Front Arm Subsystem Block Diagram](block_diagram.png)
 
