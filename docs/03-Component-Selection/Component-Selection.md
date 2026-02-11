@@ -2,7 +2,7 @@
 title: Module's Selected Major Components
 ---
 
-# Selected Major Components
+## Selected Major Components
 
 # Power Management
 
