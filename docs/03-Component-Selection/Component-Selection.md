@@ -46,6 +46,8 @@ For more details, review the ["Appendix - Component Selection Process - Actuator
 | Fixed 5V output simplifies power design. | Not synchronous, so efficiency is lower than modern buck regulators. |
 | Surface-mount package meets EGR314 requirement. | Requires careful PCB layout to minimize switching noise. |
 
+---
+
 
 
     2. LM22679TJE-5.0/NOPB  
@@ -62,6 +64,9 @@ For more details, review the ["Appendix - Component Selection Process - Actuator
 | Surface-mount (meets EGR314 requirement). | Not synchronous (lower efficiency than modern buck ICs). |
 | SIMPLE SWITCHER series (proven, reliable design). | Careful PCB layout required for switching noise. |
 
+---
+
+
 
     3. LM2678T-5.0/NOPB  
 
@@ -77,12 +82,12 @@ For more details, review the ["Appendix - Component Selection Process - Actuator
 | Lower cost than surface-mount versions. | Requires external inductor and diode. |
 | Easy prototyping due to TO-220 package. | Lower switching frequency (260kHz → larger external components). |
 
+---
 
-
-## 5V Regulator Choice  
+# 5V Regulator Choice  
 **Selected Component:** LM22678TJ-5.0/NOPB  
 
-### Rationale 
+# Rationale 
 The LM22678TJ-5.0/NOPB was chosen because it can supply up to 5A, giving plenty of headroom for motors and other high-current loads. Its wide input range works well with the 9V barrel jack, and the fixed 5V output keeps the design simple. It also meets the surface-mount requirement for the project and is practical to route on the PCB.
 
 
@@ -104,6 +109,9 @@ The LM22678TJ-5.0/NOPB was chosen because it can supply up to 5A, giving plenty 
 | Surface-mount (16-TSSOP). | Requires external inductor and capacitors. |
 | Input range up to 14V (works with 9V barrel input). | Slightly older architecture. |
 
+---
+
+
     2. LM2655MTCX-3.3/NOPB  
 
 <img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/4108/296%7E4040064-4%7EPW%7E16.JPG?hidebanner=true" width="120">
@@ -117,6 +125,9 @@ The LM22678TJ-5.0/NOPB was chosen because it can supply up to 5A, giving plenty 
 | 3.3V fixed output. | 300kHz switching frequency. |
 | Surface-mount (16-TSSOP). | Requires external inductor and capacitors. |
 | Works with 9V input. | Slightly higher cost than 1.5A option. |
+
+---
+
 
 
     3. MAX77503BEWC33+T  
@@ -134,10 +145,10 @@ The LM22678TJ-5.0/NOPB was chosen because it can supply up to 5A, giving plenty 
 | Lower cost than TI options. | Harder to hand assemble. |
 
 
-## 3.3V Regulator Choice  
+# 3.3V Regulator Choice  
 **Selected Component:** LM2651MTCX-3.3/NOPB  
 
-### Rationale  
+# Rationale  
 The LM2651MTCX-3.3/NOPB was selected to power the 3.3V logic rail for the microcontroller and sensors. It provides more than enough current for the system while maintaining good efficiency with its synchronous design. The surface-mount package satisfies project constraints and is easier to work with than smaller wafer-level packages.
 
 
@@ -158,6 +169,9 @@ The LM2651MTCX-3.3/NOPB was selected to power the 3.3V logic rail for the microc
 | 5A current rating supports motor loads. | Larger footprint. |
 | Includes internal switch (can disconnect external supply automatically). | Moderate PCB space required. |
 
+---
+
+
     2. 54-00164  
 
 <img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/211/MFG_54-00164.jpg?hidebanner=true" width="120">
@@ -171,6 +185,9 @@ The LM2651MTCX-3.3/NOPB was selected to power the 3.3V logic rail for the microc
 | Surface-mount, right-angle. | 5.5A rating is close to system maximum. |
 | 2.1mm ID / 5.5mm OD standard size. | Larger footprint. |
 | 48V rating provides voltage margin. | No special locking feature. |
+
+---
+
 
 
     3. PJ-006A-SMT-TR  
@@ -187,10 +204,13 @@ The LM2651MTCX-3.3/NOPB was selected to power the 3.3V logic rail for the microc
 | Compact footprint. | Lower current capacity for high motor loads. |
 | Lower cost. | Fewer safety margins compared to 5A-rated options. |
 
-## Barrel Jack Choice
+---
+
+
+# Barrel Jack Choice
 **Selected Component:** PJ-036AH-SMT-TR (2.1mm ID / 5.5mm OD, right-angle, SMT)
 
-### Rationale  
+# Rationale  
 The PJ-036AH-SMT-TR was selected because it is a surface-mount, right-angle barrel jack with a 5A current rating, giving solid headroom for the rover’s power needs. It uses the standard 2.1mm x 5.5mm barrel size, so it matches common 9–12V adapters. This part also provides a reliable mechanical connection while keeping assembly simple and consistent with the project’s surface-mount design approach.
 
 
@@ -214,6 +234,8 @@ The PJ-036AH-SMT-TR was selected because it is a surface-mount, right-angle barr
 
 ---
 
+
+
     2. D2F-01  
 
 <img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/2449/D2F-F%2C%20D2F%2C%20D2F-01%2C%20D2F-01F.jpg?hidebanner=true" width="120">
@@ -230,6 +252,8 @@ The PJ-036AH-SMT-TR was selected because it is a surface-mount, right-angle barr
 
 ---
 
+
+
     3. TS0101F020P  
 
 <img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/591/TS0101F020P.jpg?hidebanner=true" width="120">
@@ -245,15 +269,19 @@ The PJ-036AH-SMT-TR was selected because it is a surface-mount, right-angle barr
 
 ---
 
-## Homing Switch Choice  
+
+
+# Homing Switch Choice  
 **Selected Component:** D2F-01  
 
-### Rationale  
+# Rationale  
 The D2F-01 was selected because it provides reliable SPDT operation with a 30V DC rating, giving a comfortable safety margin for a 3.3V or 5V logic signal. Its 100mA rating is more than sufficient for a homing input while avoiding unnecessary oversizing. This option offers a strong balance of reliability, durability, and cost for the subsystem.
 
 
 
 ## Actuators
+
+### Servos
 
     1. CN0193 – 20KG High Torque Servo
 
@@ -270,6 +298,7 @@ The D2F-01 was selected because it provides reliable SPDT operation with a 30V D
 
 ---
 
+
     2. Adafruit 1142 – High Torque 5V Servo
 
 <img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/2234/1142.jpg?hidebanner=true" width="120">
@@ -284,6 +313,8 @@ The D2F-01 was selected because it provides reliable SPDT operation with a 30V D
 | Good build quality. | Slightly bulky. |
 
 ---
+
+
 
     3. Adafruit 2307 – Metal Gear Micro Servo
 
@@ -300,17 +331,130 @@ The D2F-01 was selected because it provides reliable SPDT operation with a 30V D
 
 ---
 
-# Actuator Selection
+# Shoulder / Elbow Choice
 
-## Shoulder / Elbow Choice
 **Selected Component:** CN0193  
 
-### Rationale
+# Rationale
 The CN0193 was selected for the shoulder and elbow joints because these joints experience the highest torque loads. The 20kg·cm rating provides sufficient lifting capability for the arm structure and payload. Although it draws more current and is physically larger, the added torque margin improves reliability and reduces the risk of stalling under load.
 
 
-## Wrist Choice
+# Wrist Choice
 **Selected Component:** Adafruit 2307  
 
-### Rationale
+# Rationale
 The Adafruit 2307 was selected for the wrist because this joint requires significantly less torque. Using a smaller servo reduces weight at the end of the arm, lowering inertia and improving responsiveness. It also reduces power consumption while still meeting the functional requirements of the wrist joint.
+
+## Stepper Motors
+
+    1. MOT-I-81619 – NEMA 17 Hybrid Stepper (7V, 1.2A)
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/6243/MFG_MOT-I-81619.jpg?hidebanner=true" width="120">
+
+* $22.96/each  
+* [Link to product](https://www.digikey.com/en/products/detail/isl-products-international/MOT-I-81619/23628502)
+
+| Pros | Cons |
+|------|------|
+| Higher current (1.2A) provides stronger torque capability. | Higher current draw increases power requirements. |
+| Standard NEMA 17 frame. | Lower voltage (7V) may require tighter driver control. |
+| 200 steps/rev (1.8° resolution). | Moderate cost. |
+
+---
+
+    2. MOT-I-81656 – NEMA 17 Hybrid Stepper (12V, 400mA)
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/5786/MFG_MOT-I-81656.jpg?hidebanner=true" width="120">
+
+* $37.06/each  
+* [Link to product](https://www.digikey.com/en/products/detail/isl-products-international/MOT-I-81656/22168752)
+
+| Pros | Cons |
+|------|------|
+| Lower current (400mA) reduces power consumption. | More expensive option. |
+| 12V rated (compatible with common 12V systems). | Lower torque than 1.2A option. |
+| Standard NEMA 17 footprint. | Longer motor body increases size. |
+
+---
+
+    3. NEMA17-13-04SD-AMT112S – Stepper w/ Integrated Encoder
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/496/MFG_NEMA17.jpg?hidebanner=true" width="120">
+
+* $113.45/each  
+* [Link to product](https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/NEMA17-13-04SD-AMT112S/9477645)
+
+| Pros | Cons |
+|------|------|
+| Integrated encoder enables closed-loop control. | Very high cost. |
+| Higher voltage range (24–48V). | More complex control requirements. |
+| Improved positioning accuracy. | Overkill for basic stepper control needs. |
+
+---
+
+# Stepper Motor Selection
+
+**Selected Component:** MOT-I-81619  
+
+# Rationale
+The MOT-I-81619 was selected because it provides sufficient torque with a 1.2A current rating while maintaining a standard NEMA 17 footprint. It offers strong performance without the added complexity and cost of an integrated encoder. Compared to the 400mA option, this motor provides better torque margin, which improves reliability under load. The encoder-equipped model was not selected due to cost and unnecessary complexity for this application.
+
+
+## Stepper Motor Driver
+
+
+## 1. TMC2209-LA
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/2345/TMC2209-LA.jpg" width="120">
+
+* ~$5.20 each  
+* [Link to product](https://www.digikey.com/en/products/detail/analog-devices-inc-maxim-integrated/TMC2209-LA)
+
+| Pros | Cons |
+|------|------|
+| Up to 2A output current | QFN package (harder to hand solder) |
+| UART configuration capability | 28-pin layout increases PCB complexity |
+| Very smooth microstepping (1/256) | Longer lead time |
+| Quiet operation (great for robotics) | Requires careful thermal layout |
+
+---
+
+## 2. DRV8889PWPRQ1
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/789/DRV8889.jpg" width="120">
+
+* ~$5.02 each  
+* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/DRV8889PWPRQ1)
+
+| Pros | Cons |
+|------|------|
+| 1.5A output current | Lower current than other options |
+| Automotive qualified (AEC-Q100) | Larger footprint |
+| SPI interface option | Requires configuration setup |
+| 1/256 microstepping | Moderate soldering difficulty |
+
+---
+
+## 3. DRV8434SRGER
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/4567/DRV8434.jpg" width="120">
+
+* ~$3.96 each  
+* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/DRV8434SRGER)
+
+| Pros | Cons |
+|------|------|
+| Up to 2.5A output current | QFN package (advanced soldering) |
+| Wide supply range (4.5V–48V) | Requires careful PCB thermal layout |
+| 1/256 microstepping | No advanced stall detection |
+| Lower cost | Slightly more design complexity |
+
+---
+
+# Stepper Driver Choice
+
+**Selected Component:** DRV8434SRGER  
+
+## Rationale
+
+The DRV8434SRGER was selected because it provides the highest current capability (2.5A), giving additional torque margin for the NEMA 17 stepper motor. It supports a 12V system comfortably and offers strong microstepping performance at a lower cost. This driver provides the best balance of performance, scalability, and cost for the front arm subsystem.
