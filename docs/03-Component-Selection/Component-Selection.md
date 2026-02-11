@@ -195,10 +195,122 @@ The PJ-036AH-SMT-TR was selected because it is a surface-mount, right-angle barr
 
 
 
-## Sensor
+## Switch
+
+### Homing (Limit) Switch Options
+
+    1. D2F-L  
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/2423/D2F-L%2C%20D2F-FL%2C%20D2F-01L%2C%20D2F-01FL.jpg?hidebanner=true" width="120">
+
+* $1.41/each  
+* [Link to product](https://www.digikey.com/en/products/detail/omron-electronics-inc-emc-div/D2F-L/83251)
+
+| Pros | Cons |
+|------|------|
+| High 3A current rating (very durable). | Oversized for logic-level homing signal. |
+| Industrial-grade Omron quality. | Larger physical size. |
+| 125V AC / 30V DC rating. | Higher cost than needed. |
+
+---
+
+    2. D2F-01  
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/2449/D2F-F%2C%20D2F%2C%20D2F-01%2C%20D2F-01F.jpg?hidebanner=true" width="120">
+
+* $1.86/each  
+* [Link to product](https://www.digikey.com/en/products/detail/omron-electronics-inc-emc-div/D2F-01/83260)
+
+| Pros | Cons |
+|------|------|
+| 30V DC rating provides safe voltage margin. | Slightly more expensive than budget options. |
+| 100mA rating is more than enough for microcontroller input. | Through-hole mounting. |
+| Reliable Omron industrial design. | Moderate footprint size. |
+| Compact and widely used for limit switches. |  |
+
+---
+
+    3. TS0101F020P  
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/591/TS0101F020P.jpg?hidebanner=true" width="120">
+
+* $0.84/each  
+* [Link to product](https://www.digikey.com/en/products/detail/e-switch/TS0101F020P/2639088)
+
+| Pros | Cons |
+|------|------|
+| Lowest cost option. | Only rated for 6V DC. |
+| Compact size. | Lower durability rating. |
+| 300mA rating sufficient for signal-level use. | Less robust compared to Omron switches. |
+
+---
+
+## Homing Switch Choice  
+**Selected Component:** D2F-01  
+
+### Rationale  
+The D2F-01 was selected because it provides reliable SPDT operation with a 30V DC rating, giving a comfortable safety margin for a 3.3V or 5V logic signal. Its 100mA rating is more than sufficient for a homing input while avoiding unnecessary oversizing. This option offers a strong balance of reliability, durability, and cost for the subsystem.
 
 
 
+## Actuators
+
+    1. CN0193 – 20KG High Torque Servo
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/5344/MFG_CN0193.jpg?hidebanner=true" width="120">
+
+* $15.50/each  
+* [Link to product](https://www.digikey.com/en/products/detail/sunfounder/CN0193/18668609)
+
+| Pros | Cons |
+|------|------|
+| Very high torque (20kg·cm). | Largest and heaviest option. |
+| Handles heavy arm loads. | Higher current draw. |
+| Wide operating range (4.8–7.2V). | More expensive than smaller servos. |
+
+---
+
+    2. Adafruit 1142 – High Torque 5V Servo
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/2234/1142.jpg?hidebanner=true" width="120">
+
+* $19.95/each  
+* [Link to product](https://www.digikey.com/en/products/detail/adafruit-industries-llc/1142/5154658)
+
+| Pros | Cons |
+|------|------|
+| Decent torque (140 oz-in). | Higher cost. |
+| Operates at 5V. | Lower torque than CN0193. |
+| Good build quality. | Slightly bulky. |
+
+---
+
+    3. Adafruit 2307 – Metal Gear Micro Servo
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/2129/2307.jpg?hidebanner=true" width="120">
+
+* $11.95/each  
+* [Link to product](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2307/5154686)
+
+| Pros | Cons |
+|------|------|
+| Compact and lightweight. | Lower torque output. |
+| Lower current draw. | Not suitable for heavy loads. |
+| Metal gears improve durability. | Limited lifting capacity. |
+
+---
+
+# Actuator Selection
+
+## Shoulder / Elbow Choice
+**Selected Component:** CN0193  
+
+### Rationale
+The CN0193 was selected for the shoulder and elbow joints because these joints experience the highest torque loads. The 20kg·cm rating provides sufficient lifting capability for the arm structure and payload. Although it draws more current and is physically larger, the added torque margin improves reliability and reduces the risk of stalling under load.
 
 
-## Actuator
+## Wrist Choice
+**Selected Component:** Adafruit 2307  
+
+### Rationale
+The Adafruit 2307 was selected for the wrist because this joint requires significantly less torque. Using a smaller servo reduces weight at the end of the arm, lowering inertia and improving responsiveness. It also reduces power consumption while still meeting the functional requirements of the wrist joint.
