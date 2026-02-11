@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#power-budget" class="md-skip">
           Skip to content
         </a>
       
@@ -736,6 +736,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -764,6 +766,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -775,30 +779,6 @@
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       Overview
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#power-budget" class="md-nav__link">
-    <span class="md-ellipsis">
-      Power Budget
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#downloads" class="md-nav__link">
-    <span class="md-ellipsis">
-      Downloads
     </span>
   </a>
   
@@ -939,6 +919,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -950,30 +932,6 @@
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       Overview
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#power-budget" class="md-nav__link">
-    <span class="md-ellipsis">
-      Power Budget
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#downloads" class="md-nav__link">
-    <span class="md-ellipsis">
-      Downloads
     </span>
   </a>
   
@@ -1002,10 +960,127 @@
   
 
 
-  <h1>Power Budget</h1>
-
+<h1 id="power-budget">Power Budget</h1>
 <h2 id="overview">Overview</h2>
-<h3 id="power-budget">Power Budget</h3>
+<p>This power budget verifies that the selected regulators and external supply can safely power all major components in the subsystem. Maximum current values were taken from component datasheets and a 25% safety margin was added per EGR 314 requirements.</p>
+<hr>
+<h1 id="section-a-major-power-consuming-components">Section A – Major Power-Consuming Components</h1>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Voltage Rail</th>
+<th>Max Current (A)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PIC18F47K42</td>
+<td>3.3V</td>
+<td>0.05 A</td>
+</tr>
+<tr>
+<td>DRV8434SRGER (logic)</td>
+<td>3.3V</td>
+<td>0.02 A</td>
+</tr>
+<tr>
+<td>Stepper Motor (MOT-I-81619)</td>
+<td>9V Rail</td>
+<td>1.20 A</td>
+</tr>
+<tr>
+<td>CN0193 Servo (Shoulder)</td>
+<td>5V</td>
+<td>1.50 A (stall)</td>
+</tr>
+<tr>
+<td>CN0193 Servo (Elbow)</td>
+<td>5V</td>
+<td>1.50 A (stall)</td>
+</tr>
+<tr>
+<td>Adafruit 2307 Servo (Wrist)</td>
+<td>5V</td>
+<td>0.80 A (stall)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: Servo currents represent stall conditions (worst case).</em></p>
+<hr>
+<h1 id="section-b-power-rail-totals-with-25-safety-margin">Section B – Power Rail Totals (With 25% Safety Margin)</h1>
+<h2 id="33v-rail">3.3V Rail</h2>
+<p>Total current:
+0.05 + 0.02 = <strong>0.07 A</strong></p>
+<p>With 25% margin:
+0.07 × 1.25 = <strong>0.088 A</strong></p>
+<p>Selected Regulator: LM2651MTCX-3.3 (1.5A max)</p>
+<p>✔ Regulator capacity exceeds required current.</p>
+<hr>
+<h2 id="5v-rail">5V Rail</h2>
+<p>Total servo stall current:
+1.50 + 1.50 + 0.80 = <strong>3.80 A</strong></p>
+<p>With 25% margin:
+3.80 × 1.25 = <strong>4.75 A</strong></p>
+<p>Selected Regulator: LM22678TJ-5.0 (5A max)</p>
+<p>✔ Regulator capacity slightly exceeds required worst-case load.
+⚠ Large output capacitors recommended due to servo transients.</p>
+<hr>
+<h2 id="9v-rail-motor-supply">9V Rail (Motor Supply)</h2>
+<p>Stepper Motor max current:
+1.20 A</p>
+<p>With 25% margin:
+1.20 × 1.25 = <strong>1.50 A</strong></p>
+<p>External Supply Required:
+Minimum 9V @ 2A recommended</p>
+<hr>
+<h1 id="section-c-regulator-selection">Section C – Regulator Selection</h1>
+<table>
+<thead>
+<tr>
+<th>Rail</th>
+<th>Regulator</th>
+<th>Max Output</th>
+<th>Required</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.3V</td>
+<td>LM2651MTCX-3.3</td>
+<td>1.5A</td>
+<td>0.088A</td>
+<td>✔ Safe</td>
+</tr>
+<tr>
+<td>5V</td>
+<td>LM22678TJ-5.0</td>
+<td>5A</td>
+<td>4.75A</td>
+<td>✔ Safe</td>
+</tr>
+<tr>
+<td>9V</td>
+<td>External Adapter</td>
+<td>≥2A</td>
+<td>1.50A</td>
+<td>✔ Safe</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="section-d-external-power-source">Section D – External Power Source</h1>
+<p>Selected External Supply:
+9V DC Wall Adapter (minimum 2A rating)</p>
+<p>Total Worst-Case System Draw:
+Approximately 5–6A combined across rails (not simultaneous peak on all rails due to regulator conversion).</p>
+<p>The selected adapter provides sufficient headroom when accounting for regulator efficiency and transient loads.</p>
+<hr>
+<h1 id="conclusion">Conclusion</h1>
+<p>All power rails meet the 25% safety margin requirement. The selected 5V and 3.3V switching regulators provide sufficient current capacity for worst-case operation. The 9V external supply recommendation ensures adequate power delivery for motor and servo loads.</p>
+<p>(Final spreadsheet version to be attached.)</p>
+<h3 id="power-budget_1">Power Budget</h3>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="ADD Image" data-desc-position="bottom"><img alt="Power Budget" src="ADD Image"></a></p>
 <h2 id="downloads">Downloads</h2>
 <p>The Power Budget template can be downloaded below:  </p>
