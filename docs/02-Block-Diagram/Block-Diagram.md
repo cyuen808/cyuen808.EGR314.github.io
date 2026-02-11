@@ -6,11 +6,7 @@ tags:
 ---
 
 ## Overview
-This block diagram shows how the Front Arm Subsystem for the EGR 314 exploration device is electrically organized. The system is centered around a PIC18F47K42 microcontroller operating at 3.3V and communicating with the rover through a bidirectional UART daisy-chain.
-
-Base rotation is achieved using a NEMA 17 stepper motor controlled by a DRV8434SRGER SPI-based stepper motor driver. Three RC servos (shoulder, elbow, wrist) are included as instructor-approved stretch goals and are driven directly using PWM outputs from the microcontroller.
-
-Separate power regulation is provided for logic and servo subsystems. Homing and fault/status signals are included to ensure safe and reliable operation.
+This block diagram shows how the Front Arm Subsystem for the EGR 314 exploration device is electrically organized. The system is centered around a PIC18F47K42 microcontroller, which communicates with the rest of the rover through a bidirectional UART daisy-chain. A stepper motor is used for base rotation and is controlled through an SPI-based stepper motor driver, while RC servos are included as instructor-approved stretch goals and are driven directly using PWM outputs from the microcontroller. Separate power regulation is provided for the microcontroller, servos, and motors, and homing and fault/status signals are included to ensure safe and reliable operation.
 
 ## Block Diagram 
 
