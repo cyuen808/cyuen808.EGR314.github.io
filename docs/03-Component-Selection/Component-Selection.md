@@ -5,8 +5,6 @@ tags:
 - tag2
 ---
 
-## Selected Major Components
-
 # Power Management
 
 ## 5V Buck Regulator
