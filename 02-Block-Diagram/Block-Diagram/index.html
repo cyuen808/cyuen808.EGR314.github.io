@@ -1023,22 +1023,24 @@
   <h1>Module's Block Diagram</h1>
 
 <h2 id="overview">Overview</h2>
-<p>This block diagram shows how the Front Arm Subsystem for the EGR 314 exploration device is electrically organized. The system is centered around a PIC18F47K42 microcontroller, which communicates with the rest of the rover through a bidirectional UART daisy-chain. A stepper motor is used for base rotation and is controlled through an SPI-based stepper driver, while RC servos are included as instructor-approved stretch goals and are driven using an SPI-based PWM servo driver. Separate power regulation is provided for the microcontroller, servos, and motors, and homing and fault/status signals are included to ensure safe and reliable operation.</p>
+<p>This block diagram shows how the Front Arm Subsystem for the EGR 314 exploration device is electrically organized. The system is centered around a PIC18F47K42 microcontroller operating at 3.3V and communicating with the rover through a bidirectional UART daisy-chain.</p>
+<p>Base rotation is achieved using a NEMA 17 stepper motor controlled by a DRV8434SRGER SPI-based stepper motor driver. Three RC servos (shoulder, elbow, wrist) are included as instructor-approved stretch goals and are driven directly using PWM outputs from the microcontroller.</p>
+<p>Separate power regulation is provided for logic and servo subsystems. Homing and fault/status signals are included to ensure safe and reliable operation.</p>
 <h2 id="block-diagram">Block Diagram</h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../block_diagram.png" data-desc-position="bottom"><img alt="Front Arm Subsystem Block Diagram" src="../block_diagram.png"></a></p>
 <h3 id="key-interfaces">Key Interfaces</h3>
 <ul>
 <li><strong>UART (2 pins, bidirectional):</strong> Daisy-chain communication with upstream and downstream subsystems  </li>
 <li><strong>SPI (4 pins):</strong> Control of stepper motor driver for base rotation  </li>
-<li><strong>SPI (2 pins):</strong> Control of PWM servo driver (stretch goal)  </li>
+<li><strong>SPI (3 pins):</strong> Control of PWM servo driver (stretch goal)  </li>
 <li><strong>GPIO:</strong> Homing switch input and fault/status feedback  </li>
 </ul>
 <h3 id="power-architecture">Power Architecture</h3>
 <ul>
-<li><strong>9V DC input</strong> via barrel jack  </li>
+<li><strong>14V DC input</strong> via barrel jack  </li>
 <li><strong>3.3V switching regulator</strong> for MCU and logic  </li>
 <li><strong>5V regulator</strong> for servo power  </li>
-<li><strong>9V rail</strong> used directly by the stepper motor driver  </li>
+<li><strong>14V rail</strong> used directly by the stepper motor driver  </li>
 </ul>
 <blockquote>
 <p><strong>Note:</strong> RC servos are included as stretch goals and are an instructor-approved exception to the standard EGR 314 actuator constraints.</p>
