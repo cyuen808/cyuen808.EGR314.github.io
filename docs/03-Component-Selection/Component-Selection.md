@@ -192,7 +192,7 @@ The PJ-036AH-SMT-TR was selected because it is a surface-mount, right-angle barr
 
 
 
-# Switch
+## Switch
 
 ## Homing (Limit) Switch Options
 
@@ -256,7 +256,7 @@ The D2F-01 was selected because it provides reliable SPDT operation with a 30V D
 
 
 
-# Actuators
+## Actuators
 
 ## Servos
 
