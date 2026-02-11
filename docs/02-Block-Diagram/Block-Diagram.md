@@ -10,7 +10,7 @@ This block diagram shows how the Front Arm Subsystem for the EGR 314 exploration
 
 ## Block Diagram 
 
-![Front Arm Subsystem Block Diagram](block_diagram.png)
+![Front Arm Subsystem Block Diagram](FrontArmSubsystem.png)
 
 
 ### Key Interfaces
