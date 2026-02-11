@@ -76,3 +76,67 @@ For more details, review the ["Appendix - Component Selection Process - Actuator
 | Proven SIMPLE SWITCHER design. | Larger footprint (TO-220). |
 | Lower cost than surface-mount versions. | Requires external inductor and diode. |
 | Easy prototyping due to TO-220 package. | Lower switching frequency (260kHz → larger external components). |
+
+
+
+### 5V Regulator Choice  
+**Selected Component:** LM22678TJ-5.0/NOPB  
+
+### Rationale 
+The LM22678TJ-5.0/NOPB was chosen because it can supply up to 5A, giving plenty of headroom for motors and other high-current loads. Its wide input range works well with the 9V barrel jack, and the fixed 5V output keeps the design simple. It also meets the surface-mount requirement for the project and is practical to route on the PCB.
+
+
+
+
+### 3.3V Buck Regulator
+
+1. LM2651MTCX-3.3/NOPB  
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/4108/296%7E4040064-4%7EPW%7E16.JPG?hidebanner=true" width="120">
+
+* $4.43/each  
+* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/LM2651MTCX-3-3-NOPB/366869E)
+
+| Pros | Cons |
+|------|------|
+| 3.3V fixed output (ideal for microcontroller rail). | Only 1.5A output current. |
+| Synchronous rectifier (better efficiency than older bucks). | 300kHz switching → larger external components than 1MHz designs. |
+| Surface-mount (16-TSSOP). | Requires external inductor and capacitors. |
+| Input range up to 14V (works with 9V barrel input). | Slightly older architecture. |
+
+2. LM2655MTCX-3.3/NOPB  
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/4108/296%7E4040064-4%7EPW%7E16.JPG?hidebanner=true" width="120">
+
+* $5.76/each  
+* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/LM2655MTCX-3-3-NOPB/366873)
+
+| Pros | Cons |
+|------|------|
+| Higher output current (2.5A). | Not synchronous (lower efficiency than LM2651). |
+| 3.3V fixed output. | 300kHz switching frequency. |
+| Surface-mount (16-TSSOP). | Requires external inductor and capacitors. |
+| Works with 9V input. | Slightly higher cost than 1.5A option. |
+
+
+3. MAX77503BEWC33+T  
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/6256/175%7E21-100250%7EWC%7E12.jpg?hidebanner=true" width="120">
+
+* $2.09/each  
+* [Link to product](https://www.digikey.com/en/products/detail/analog-devices-inc-maxim-integrated/MAX77503BEWC33-T/11485809)
+
+| Pros | Cons |
+|------|------|
+| High switching frequency (1MHz → smaller inductor & caps). | WLP package (very small, harder to solder). |
+| Synchronous rectifier (high efficiency). | 1.5A max output current. |
+| Compact footprint (excellent for dense PCB layout). | More challenging PCB layout due to small pitch. |
+| Lower cost than TI options. | Harder to hand assemble. |
+
+
+### 3.3V Regulator Choice  
+**Selected Component:** LM2651MTCX-3.3/NOPB  
+
+### Rationale  
+The LM2651MTCX-3.3/NOPB was selected to power the 3.3V logic rail for the microcontroller and sensors. It provides more than enough current for the system while maintaining good efficiency with its synchronous design. The surface-mount package satisfies project constraints and is easier to work with than smaller wafer-level packages.
+
