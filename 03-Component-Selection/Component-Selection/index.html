@@ -645,6 +645,51 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#5v-regulator-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      5V Regulator Choice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rationale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33v-buck-regulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3V Buck Regulator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33v-regulator-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3V Regulator Choice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rationale_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rationale
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -890,6 +935,51 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#5v-regulator-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      5V Regulator Choice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rationale
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33v-buck-regulator" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3V Buck Regulator
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33v-regulator-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3V Regulator Choice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rationale_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rationale
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1041,6 +1131,117 @@
 </tr>
 </tbody>
 </table>
+<h3 id="5v-regulator-choice">5V Regulator Choice</h3>
+<p><strong>Selected Component:</strong> LM22678TJ-5.0/NOPB  </p>
+<h3 id="rationale">Rationale</h3>
+<p>The LM22678TJ-5.0/NOPB was chosen because it can supply up to 5A, giving plenty of headroom for motors and other high-current loads. Its wide input range works well with the 9V barrel jack, and the fixed 5V output keeps the design simple. It also meets the surface-mount requirement for the project and is practical to route on the PCB.</p>
+<h3 id="33v-buck-regulator">3.3V Buck Regulator</h3>
+<ol>
+<li>LM2651MTCX-3.3/NOPB  </li>
+</ol>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/4108/296%7E4040064-4%7EPW%7E16.JPG?hidebanner=true" data-desc-position="bottom"><img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/4108/296%7E4040064-4%7EPW%7E16.JPG?hidebanner=true" width="120"></a></p>
+<ul>
+<li>$4.43/each  </li>
+<li><a href="https://www.digikey.com/en/products/detail/texas-instruments/LM2651MTCX-3-3-NOPB/366869E">Link to product</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3.3V fixed output (ideal for microcontroller rail).</td>
+<td>Only 1.5A output current.</td>
+</tr>
+<tr>
+<td>Synchronous rectifier (better efficiency than older bucks).</td>
+<td>300kHz switching → larger external components than 1MHz designs.</td>
+</tr>
+<tr>
+<td>Surface-mount (16-TSSOP).</td>
+<td>Requires external inductor and capacitors.</td>
+</tr>
+<tr>
+<td>Input range up to 14V (works with 9V barrel input).</td>
+<td>Slightly older architecture.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>LM2655MTCX-3.3/NOPB  </li>
+</ol>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/4108/296%7E4040064-4%7EPW%7E16.JPG?hidebanner=true" data-desc-position="bottom"><img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/4108/296%7E4040064-4%7EPW%7E16.JPG?hidebanner=true" width="120"></a></p>
+<ul>
+<li>$5.76/each  </li>
+<li><a href="https://www.digikey.com/en/products/detail/texas-instruments/LM2655MTCX-3-3-NOPB/366873">Link to product</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Higher output current (2.5A).</td>
+<td>Not synchronous (lower efficiency than LM2651).</td>
+</tr>
+<tr>
+<td>3.3V fixed output.</td>
+<td>300kHz switching frequency.</td>
+</tr>
+<tr>
+<td>Surface-mount (16-TSSOP).</td>
+<td>Requires external inductor and capacitors.</td>
+</tr>
+<tr>
+<td>Works with 9V input.</td>
+<td>Slightly higher cost than 1.5A option.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>MAX77503BEWC33+T  </li>
+</ol>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/6256/175%7E21-100250%7EWC%7E12.jpg?hidebanner=true" data-desc-position="bottom"><img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/6256/175%7E21-100250%7EWC%7E12.jpg?hidebanner=true" width="120"></a></p>
+<ul>
+<li>$2.09/each  </li>
+<li><a href="https://www.digikey.com/en/products/detail/analog-devices-inc-maxim-integrated/MAX77503BEWC33-T/11485809">Link to product</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High switching frequency (1MHz → smaller inductor &amp; caps).</td>
+<td>WLP package (very small, harder to solder).</td>
+</tr>
+<tr>
+<td>Synchronous rectifier (high efficiency).</td>
+<td>1.5A max output current.</td>
+</tr>
+<tr>
+<td>Compact footprint (excellent for dense PCB layout).</td>
+<td>More challenging PCB layout due to small pitch.</td>
+</tr>
+<tr>
+<td>Lower cost than TI options.</td>
+<td>Harder to hand assemble.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33v-regulator-choice">3.3V Regulator Choice</h3>
+<p><strong>Selected Component:</strong> LM2651MTCX-3.3/NOPB  </p>
+<h3 id="rationale_1">Rationale</h3>
+<p>The LM2651MTCX-3.3/NOPB was selected to power the 3.3V logic rail for the microcontroller and sensors. It provides more than enough current for the system while maintaining good efficiency with its synchronous design. The surface-mount package satisfies project constraints and is easier to work with than smaller wafer-level packages.</p>
 
 
 
