@@ -44,3 +44,51 @@ For more details, review the ["Appendix - Component Selection Process - Actuator
 | Component | Pros | Cons |
 |-----------|------|------|
 | <img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/6347/296%7ETA07B%7ENDZ%7E7.jpg?hidebanner=true" width="120"> <br> **5V Buck Regulator - LM2678T-5.0/NOPB** <br> *$6.99/each* <br> [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/LM2678T-5-0-NOPB/363828) | • 5A output capability  <br> • Proven SIMPLE SWITCHER design  <br> • Lower cost than surface-mount versions  <br> • Easy prototyping (TO-220 package) | • **Through-hole (does NOT meet surface-mount requirement)**  <br> • Larger footprint  <br> • Requires external inductor and diode  <br> • Lower switching frequency (260kHz → larger external components)  <br> • Not synchronous |
+
+
+
+
+1. LM22678TJ-5.0/NOPB  
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/6347/296%7ETJ7A%7ENDR%7E7.jpg?hidebanner=true" width="120">
+
+* $7.61/each  
+* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/LM22678TJ-5-0-NOPB/1951972)
+
+| Pros | Cons |
+|------|------|
+| 5A output capability supports high-current subsystems. | Requires external inductor, diode, and capacitors. |
+| Wide input range (4.5V–42V) works well with 9V barrel jack input. | Larger TO-263 footprint increases PCB space usage. |
+| Fixed 5V output simplifies power design. | Not synchronous, so efficiency is lower than modern buck regulators. |
+| Surface-mount package meets EGR314 requirement. | Requires careful PCB layout to minimize switching noise. |
+
+
+
+2. LM22679TJE-5.0/NOPB  
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/6347/296%7ETJ7A%7ENDR%7E7.jpg?hidebanner=true" width="120">
+
+* $8.62/each  
+* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/LM22679TJE-5-0-NOPB/1950780)
+
+| Pros | Cons |
+|------|------|
+| 5A output capability. | Requires external inductor, diode, and capacitors. |
+| Wide input range (4.5V–42V). | Large TO-263 footprint. |
+| Surface-mount (meets EGR314 requirement). | Not synchronous (lower efficiency than modern buck ICs). |
+| SIMPLE SWITCHER series (proven, reliable design). | Careful PCB layout required for switching noise. |
+
+
+3. LM2678T-5.0/NOPB  
+
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/6347/296%7ETA07B%7ENDZ%7E7.jpg?hidebanner=true" width="120"> 
+
+* $6.99/each  
+* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/LM2678T-5-0-NOPB/363828)
+
+| Pros | Cons |
+|------|------|
+| 5A output capability. | **Through-hole package (does NOT meet surface-mount requirement).** |
+| Proven SIMPLE SWITCHER design. | Larger footprint (TO-220). |
+| Lower cost than surface-mount versions. | Requires external inductor and diode. |
+| Easy prototyping due to TO-220 package. | Lower switching frequency (260kHz → larger external components). |
