@@ -1,5 +1,8 @@
 ---
 title: Module's Selected Major Components
+tags:
+- tag1
+- tag2
 ---
 
 ## Selected Major Components
