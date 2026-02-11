@@ -402,13 +402,12 @@ The MOT-I-81619 was selected because it provides sufficient torque with a 1.2A c
 
 ## Stepper Motor Driver
 
+    1. TMC2209-LA
 
-## 1. TMC2209-LA
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/204/1460%7E28QFN-%2C90-5x5%7EL%7E28.jpg?hidebanner=true" width="120">
 
-<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/2345/TMC2209-LA.jpg" width="120">
-
-* ~$5.20 each  
-* [Link to product](https://www.digikey.com/en/products/detail/analog-devices-inc-maxim-integrated/TMC2209-LA)
+* $5.20 each  
+* [Link to product](https://www.digikey.com/en/products/detail/analog-devices-inc-maxim-integrated/TMC2209-LA/10249904)
 
 | Pros | Cons |
 |------|------|
@@ -421,10 +420,10 @@ The MOT-I-81619 was selected because it provides sufficient torque with a 1.2A c
 
 ## 2. DRV8889PWPRQ1
 
-<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/789/DRV8889.jpg" width="120">
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/6295/296%7E4224477%7EPWP%7E24.jpg?hidebanner=true" width="120">
 
-* ~$5.02 each  
-* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/DRV8889PWPRQ1)
+* $5.02 each  
+* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/DRV8889QPWPRQ1/11615769)
 
 | Pros | Cons |
 |------|------|
@@ -437,10 +436,10 @@ The MOT-I-81619 was selected because it provides sufficient torque with a 1.2A c
 
 ## 3. DRV8434SRGER
 
-<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/4567/DRV8434.jpg" width="120">
+<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/4212/296%7E4204104%7ERGE%7E24.jpg?hidebanner=true" width="120">
 
-* ~$3.96 each  
-* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/DRV8434SRGER)
+* $3.96 each  
+* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/DRV8434SRGER/13627140)
 
 | Pros | Cons |
 |------|------|
@@ -455,6 +454,6 @@ The MOT-I-81619 was selected because it provides sufficient torque with a 1.2A c
 
 **Selected Component:** DRV8434SRGER  
 
-## Rationale
+# Rationale
 
 The DRV8434SRGER was selected because it provides the highest current capability (2.5A), giving additional torque margin for the NEMA 17 stepper motor. It supports a 12V system comfortably and offers strong microstepping performance at a lower cost. This driver provides the best balance of performance, scalability, and cost for the front arm subsystem.
