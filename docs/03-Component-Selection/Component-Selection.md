@@ -28,9 +28,9 @@ For more details, review the ["Appendix - Component Selection Process - Actuator
 -----------
 > Remove the following before submitting! Use them to present the selected components
 
-## Power Management
+# Power Management
 
-### 5V Buck Regulator
+## 5V Buck Regulator
 
     1. LM22678TJ-5.0/NOPB  
 
@@ -84,16 +84,16 @@ For more details, review the ["Appendix - Component Selection Process - Actuator
 
 ---
 
-# 5V Regulator Choice  
+### 5V Regulator Choice  
 **Selected Component:** LM22678TJ-5.0/NOPB  
 
-# Rationale 
+### Rationale 
 The LM22678TJ-5.0/NOPB was chosen because it can supply up to 5A, giving plenty of headroom for motors and other high-current loads. Its wide input range works well with the 9V barrel jack, and the fixed 5V output keeps the design simple. It also meets the surface-mount requirement for the project and is practical to route on the PCB.
 
 
 
 
-### 3.3V Buck Regulator
+## 3.3V Buck Regulator
 
     1. LM2651MTCX-3.3/NOPB  
 
@@ -145,15 +145,15 @@ The LM22678TJ-5.0/NOPB was chosen because it can supply up to 5A, giving plenty 
 | Lower cost than TI options. | Harder to hand assemble. |
 
 
-# 3.3V Regulator Choice  
+### 3.3V Regulator Choice  
 **Selected Component:** LM2651MTCX-3.3/NOPB  
 
-# Rationale  
+### Rationale  
 The LM2651MTCX-3.3/NOPB was selected to power the 3.3V logic rail for the microcontroller and sensors. It provides more than enough current for the system while maintaining good efficiency with its synchronous design. The surface-mount package satisfies project constraints and is easier to work with than smaller wafer-level packages.
 
 
 
-### DC Barrel Jack 12V Input
+## DC Barrel Jack 12V Input
 
     1. PJ-036AH-SMT-TR  
 
@@ -207,17 +207,17 @@ The LM2651MTCX-3.3/NOPB was selected to power the 3.3V logic rail for the microc
 ---
 
 
-# Barrel Jack Choice
+### Barrel Jack Choice
 **Selected Component:** PJ-036AH-SMT-TR (2.1mm ID / 5.5mm OD, right-angle, SMT)
 
-# Rationale  
+### Rationale  
 The PJ-036AH-SMT-TR was selected because it is a surface-mount, right-angle barrel jack with a 5A current rating, giving solid headroom for the rover’s power needs. It uses the standard 2.1mm x 5.5mm barrel size, so it matches common 9–12V adapters. This part also provides a reliable mechanical connection while keeping assembly simple and consistent with the project’s surface-mount design approach.
 
 
 
-## Switch
+# Switch
 
-### Homing (Limit) Switch Options
+## Homing (Limit) Switch Options
 
     1. D2F-L  
 
@@ -271,17 +271,17 @@ The PJ-036AH-SMT-TR was selected because it is a surface-mount, right-angle barr
 
 
 
-# Homing Switch Choice  
+### Homing Switch Choice  
 **Selected Component:** D2F-01  
 
-# Rationale  
+### Rationale  
 The D2F-01 was selected because it provides reliable SPDT operation with a 30V DC rating, giving a comfortable safety margin for a 3.3V or 5V logic signal. Its 100mA rating is more than sufficient for a homing input while avoiding unnecessary oversizing. This option offers a strong balance of reliability, durability, and cost for the subsystem.
 
 
 
-## Actuators
+# Actuators
 
-### Servos
+## Servos
 
     1. CN0193 – 20KG High Torque Servo
 
@@ -331,19 +331,20 @@ The D2F-01 was selected because it provides reliable SPDT operation with a 30V D
 
 ---
 
-# Shoulder / Elbow Choice
+### Shoulder / Elbow Choice
 
 **Selected Component:** CN0193  
 
-# Rationale
+### Rationale
 The CN0193 was selected for the shoulder and elbow joints because these joints experience the highest torque loads. The 20kg·cm rating provides sufficient lifting capability for the arm structure and payload. Although it draws more current and is physically larger, the added torque margin improves reliability and reduces the risk of stalling under load.
 
 
-# Wrist Choice
+### Wrist Choice
 **Selected Component:** Adafruit 2307  
 
-# Rationale
+### Rationale
 The Adafruit 2307 was selected for the wrist because this joint requires significantly less torque. Using a smaller servo reduces weight at the end of the arm, lowering inertia and improving responsiveness. It also reduces power consumption while still meeting the functional requirements of the wrist joint.
+
 
 ## Stepper Motors
 
@@ -392,12 +393,14 @@ The Adafruit 2307 was selected for the wrist because this joint requires signifi
 
 ---
 
-# Stepper Motor Selection
+### Stepper Motor Selection
 
 **Selected Component:** MOT-I-81619  
 
-# Rationale
+### Rationale
 The MOT-I-81619 was selected because it provides sufficient torque with a 1.2A current rating while maintaining a standard NEMA 17 footprint. It offers strong performance without the added complexity and cost of an integrated encoder. Compared to the 400mA option, this motor provides better torque margin, which improves reliability under load. The encoder-equipped model was not selected due to cost and unnecessary complexity for this application.
+
+
 
 
 ## Stepper Motor Driver
@@ -450,10 +453,9 @@ The MOT-I-81619 was selected because it provides sufficient torque with a 1.2A c
 
 ---
 
-# Stepper Driver Choice
+### Stepper Driver Choice
 
 **Selected Component:** DRV8434SRGER  
 
-# Rationale
-
+### Rationale
 The DRV8434SRGER was selected because it provides the highest current capability (2.5A), giving additional torque margin for the NEMA 17 stepper motor. It supports a 12V system comfortably and offers strong microstepping performance at a lower cost. This driver provides the best balance of performance, scalability, and cost for the front arm subsystem.
