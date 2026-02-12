@@ -400,7 +400,7 @@ The MOT-I-81619 was selected because it provides sufficient torque with a 1.2A c
 
 ---
 
-## 2. DRV8889PWPRQ1
+    2. DRV8889PWPRQ1
 
 <img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/6295/296%7E4224477%7EPWP%7E24.jpg?hidebanner=true" width="120">
 
@@ -416,7 +416,7 @@ The MOT-I-81619 was selected because it provides sufficient torque with a 1.2A c
 
 ---
 
-## 3. DRV8434SRGER
+    3. DRV8434SRGER
 
 <img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/4212/296%7E4204104%7ERGE%7E24.jpg?hidebanner=true" width="120">
 
