@@ -79,7 +79,7 @@ The LM22678TJ-5.0/NOPB was chosen because it can supply up to 5A, giving plenty 
 <img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/4108/296%7E4040064-4%7EPW%7E16.JPG?hidebanner=true" width="120">
 
 * $4.43/each  
-* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/LM2651MTCX-3-3-NOPB/366869E)
+* [Link to product](https://www.digikey.com/en/products/detail/texas-instruments/LM2651MTCX-3-3-NOPB/366869)
 
 | Pros | Cons |
 |------|------|
@@ -132,7 +132,7 @@ The LM2651MTCX-3.3/NOPB was selected to power the 3.3V logic rail for the microc
 
 
 
-## DC Barrel Jack 12V Input
+## DC Barrel Jack 14V Input
 
     1. PJ-036AH-SMT-TR  
 
