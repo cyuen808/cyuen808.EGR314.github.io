@@ -11,7 +11,8 @@ The Symbols for the Barrel jack, ESP32, 3.3V/5V Regulator, and Stepper Motor Dri
 
 The system includes:
 
-- 14V input from barrel jack or 14.4V battery pack
+- +14V input from 14V barrel jack or 14.4V battery pack
+- Protection main SMD fuse on the +14V input rail
 - 5V buck regulator dedicated to servo power
 - 3.3V buck regulator for ESP32-S3 and logic
 - DRV8434S stepper motor driver (SPI controlled)
@@ -24,7 +25,7 @@ This schematic ensures clean power distribution, safe current limiting for the N
 
 
 ### Full System Schematic
-![schematic](Front-Arm-Subsystem.png){style width:"350" height:"300;"}
+![schematic](Front-Arm-Subsystem.png){style width:"450" height:"400;"}
 **Figure 5.1** – Front Arm Subsystem Electrical Schematic
 
 
@@ -35,6 +36,7 @@ This schematic ensures clean power distribution, safe current limiting for the N
 - LM22678 5V Buck Regulator for Servos
 - LM2651 3.3V Buck Regulator for ESP32 & Logic
 - Proper decoupling, filtering, and PWR_FLAG validation
+- Fuse (F1) on the +14V rail before feeding the rest of the board
 
 #### Stepper Motor Control
 - DRV8434S Stepper Driver
@@ -45,7 +47,7 @@ This schematic ensures clean power distribution, safe current limiting for the N
 
 #### Servo Outputs
 - Three 5V PWM-controlled RC servo headers
-- Dedicated +5V_SERVO rail
+- Dedicated +5V rail
 - Shared system ground
 
 #### Microcontroller Interface
