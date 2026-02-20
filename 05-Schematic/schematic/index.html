@@ -1100,7 +1100,8 @@ It integrates power management, motion control, and microcontroller interfacing 
 The Symbols for the Barrel jack, ESP32, 3.3V/5V Regulator, and Stepper Motor Driver was sourced by Digikey.</p>
 <p>The system includes:</p>
 <ul>
-<li>14V input from barrel jack or 14.4V battery pack</li>
+<li>+14V input from 14V barrel jack or 14.4V battery pack</li>
+<li>Protection main SMD fuse on the +14V input rail</li>
 <li>5V buck regulator dedicated to servo power</li>
 <li>3.3V buck regulator for ESP32-S3 and logic</li>
 <li>DRV8434S stepper motor driver (SPI controlled)</li>
@@ -1111,7 +1112,7 @@ The Symbols for the Barrel jack, ESP32, 3.3V/5V Regulator, and Stepper Motor Dri
 </ul>
 <p>This schematic ensures clean power distribution, safe current limiting for the NEMA 17 motor (1.2A rated), and robust GPIO-level interfacing at 3.3V.</p>
 <h3 id="full-system-schematic">Full System Schematic</h3>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Front-Arm-Subsystem.png" data-desc-position="bottom"><img alt="schematic" height:_300_="height:&quot;300;&quot;" src="../Front-Arm-Subsystem.png" style="style" width:_350_="width:&quot;350&quot;"></a>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Front-Arm-Subsystem.png" data-desc-position="bottom"><img alt="schematic" height:_400_="height:&quot;400;&quot;" src="../Front-Arm-Subsystem.png" style="style" width:_450_="width:&quot;450&quot;"></a>
 <strong>Figure 5.1</strong> – Front Arm Subsystem Electrical Schematic</p>
 <h3 id="key-functional-blocks">Key Functional Blocks</h3>
 <h4 id="power-management">Power Management</h4>
@@ -1120,6 +1121,7 @@ The Symbols for the Barrel jack, ESP32, 3.3V/5V Regulator, and Stepper Motor Dri
 <li>LM22678 5V Buck Regulator for Servos</li>
 <li>LM2651 3.3V Buck Regulator for ESP32 &amp; Logic</li>
 <li>Proper decoupling, filtering, and PWR_FLAG validation</li>
+<li>Fuse (F1) on the +14V rail before feeding the rest of the board</li>
 </ul>
 <h4 id="stepper-motor-control">Stepper Motor Control</h4>
 <ul>
@@ -1132,7 +1134,7 @@ The Symbols for the Barrel jack, ESP32, 3.3V/5V Regulator, and Stepper Motor Dri
 <h4 id="servo-outputs">Servo Outputs</h4>
 <ul>
 <li>Three 5V PWM-controlled RC servo headers</li>
-<li>Dedicated +5V_SERVO rail</li>
+<li>Dedicated +5V rail</li>
 <li>Shared system ground</li>
 </ul>
 <h4 id="microcontroller-interface">Microcontroller Interface</h4>
