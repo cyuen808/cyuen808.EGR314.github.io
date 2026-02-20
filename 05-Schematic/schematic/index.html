@@ -735,9 +735,69 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resouces" class="md-nav__link">
+  <a href="#full-system-schematic" class="md-nav__link">
     <span class="md-ellipsis">
-      Resouces
+      Full System Schematic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-functional-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Functional Blocks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Functional Blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stepper-motor-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stepper Motor Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servo-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servo Outputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microcontroller-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microcontroller Interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
     </span>
   </a>
   
@@ -941,9 +1001,69 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#resouces" class="md-nav__link">
+  <a href="#full-system-schematic" class="md-nav__link">
     <span class="md-ellipsis">
-      Resouces
+      Full System Schematic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-functional-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Functional Blocks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Functional Blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#power-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stepper-motor-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stepper Motor Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servo-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Servo Outputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microcontroller-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microcontroller Interface
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
     </span>
   </a>
   
@@ -974,12 +1094,60 @@
 
   <h1>Module Schematic</h1>
 
-<h2 id="overview">Overview</h2>
-<p>This schematic is design to support .... (highlight functionally, power, and controller).</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Screenshot.png" data-desc-position="bottom"><img alt="schematic" height:_300_="height:&quot;300;&quot;" src="../Screenshot.png" style="style" width:_350_="width:&quot;350&quot;"></a>
-<strong>Figure ##:</strong> Showing a example schematic.</p>
-<h2 id="resouces">Resouces</h2>
-<p>The schematic as a PDF download is available <a href="../ExampleSchematic.pdf"><em>here</em></a>, and the Zip folder of the project <a href="../dummyZip.zip"><em>here</em></a>.</p>
+<h3 id="overview">Overview</h3>
+<p>This schematic supports the full Front Arm Subsystem of the EGR 314 exploration rover.<br>
+It integrates power management, motion control, and microcontroller interfacing into a single modular design.
+The Symbols for the Barrel jack, ESP32, 3.3V/5V Regulator, and Stepper Motor Driver was sourced by Digikey.</p>
+<p>The system includes:</p>
+<ul>
+<li>14V input from barrel jack or 14.4V battery pack</li>
+<li>5V buck regulator dedicated to servo power</li>
+<li>3.3V buck regulator for ESP32-S3 and logic</li>
+<li>DRV8434S stepper motor driver (SPI controlled)</li>
+<li>Three RC servo outputs (Shoulder, Elbow, Wrist)</li>
+<li>UART daisy-chain communication interface</li>
+<li>USB programming and debugging interface</li>
+<li>Fault monitoring and current limiting via VREF network</li>
+</ul>
+<p>This schematic ensures clean power distribution, safe current limiting for the NEMA 17 motor (1.2A rated), and robust GPIO-level interfacing at 3.3V.</p>
+<h3 id="full-system-schematic">Full System Schematic</h3>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../Front-Arm-Subsystem.png" data-desc-position="bottom"><img alt="schematic" height:_300_="height:&quot;300;&quot;" src="../Front-Arm-Subsystem.png" style="style" width:_350_="width:&quot;350&quot;"></a>
+<strong>Figure 5.1</strong> – Front Arm Subsystem Electrical Schematic</p>
+<h3 id="key-functional-blocks">Key Functional Blocks</h3>
+<h4 id="power-management">Power Management</h4>
+<ul>
+<li>14V Input Selection (Barrel Jack / Battery)</li>
+<li>LM22678 5V Buck Regulator for Servos</li>
+<li>LM2651 3.3V Buck Regulator for ESP32 &amp; Logic</li>
+<li>Proper decoupling, filtering, and PWR_FLAG validation</li>
+</ul>
+<h4 id="stepper-motor-control">Stepper Motor Control</h4>
+<ul>
+<li>DRV8434S Stepper Driver</li>
+<li>Adjustable current limit via VREF resistor divider</li>
+<li>SPI configuration (SCLK, SDI, SDO, NSCS)</li>
+<li>STEP/DIR control</li>
+<li>nFAULT monitoring (open-drain with pull-up)</li>
+</ul>
+<h4 id="servo-outputs">Servo Outputs</h4>
+<ul>
+<li>Three 5V PWM-controlled RC servo headers</li>
+<li>Dedicated +5V_SERVO rail</li>
+<li>Shared system ground</li>
+</ul>
+<h4 id="microcontroller-interface">Microcontroller Interface</h4>
+<ul>
+<li>ESP32-S3-WROOM-1</li>
+<li>3.3V logic</li>
+<li>UART daisy-chain interface</li>
+<li>USB interface for programming</li>
+<li>Reset and Boot control circuitry</li>
+</ul>
+<h3 id="resources">Resources</h3>
+<ul>
+<li>📄 <a href="../Front-Arm-Subsystem.pdf">Download Full Schematic PDF</a></li>
+<li>📦 <a href="../Front-Arm-Subsystem.zip">Download Project ZIP</a></li>
+</ul>
 
 
 
