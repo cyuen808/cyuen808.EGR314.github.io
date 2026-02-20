@@ -58,6 +58,6 @@ This schematic ensures clean power distribution, safe current limiting for the N
 
 ### Resources
 
-- 📄 [Download Full Schematic PDF](Front-Arm-Subsystem.pdf)
-- 📦 [Download Project ZIP](Front-Arm-Subsystem.zip)
+- [Download Full Schematic PDF](Front-Arm-Subsystem.pdf)
+- [Download Project ZIP](Front-Arm-Subsystem.zip)
 
