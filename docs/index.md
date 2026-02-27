@@ -5,7 +5,7 @@ tags:
 - tag2
 ---
 <center>
-<font size= "4">Caleb Yuen's Datasheet</font><br>
+<font size= "6">Caleb Yuen's Datasheet</font><br>
 as part of<br>
 <font size= "8"> Exploration Device Project</font><br>
 <font size= "6"> S.C.O.U.T.S</font><br>
