@@ -972,31 +972,52 @@
   <h1>Welcome</h1>
 
 <p></p><center>
-<font size="6">Caleb Yuen's Datasheet</font><br>
+<font size="4">Caleb Yuen's Datasheet</font><br>
 as part of<br>
-<font size="8"> Project Name</font><br>
-for<br>
+<font size="8"> Exploration Device Project</font><br>
+<font size="7"> S.C.O.U.T.S</font><br>
+Super Cool Original and Unique Technology Systems<br>
 <font size="5"> Team 202 </font><br><p></p>
 <p><strong>Submission: May, 01, 2026</strong>
 </p></center><p></p>
 <h2 id="introduction">Introduction</h2>
-<ul>
-<li><strong>This needs to be updated so that a reader gets an idea of the purpose of this datasheet.</strong></li>
-</ul>
+<p>Welcome to my individual subsystem datasheet for <strong>CropScout</strong>, a modular agricultural exploration rover developed in EGR 314.
+This page documents the design, implementation, and verification of my <strong>Front Arm Actuation Subsystem</strong>. The purpose of this datasheet is to provide a standalone technical reference that clearly explains what this board does, how it operates, and how it integrates into the team’s UART daisy-chain system.
+This document is written so that a reader can understand my subsystem without needing to reference the team report.</p>
 <h3 id="project-summary">Project Summary</h3>
 <ul>
 <li>This needs to be updated to reflect <ins>your version</ins> of the team project, so when shared not via the team's report, the reader gets an idea of the direction of the project and how your work will contribute to the overall success.</li>
 <li>Add context that ties into the link to your <a href="https://egr314-s-2026-202.github.io/">EGR 314 Team 202 Report.</a></li>
 </ul>
-<h3 id="my-contribution">My Contribution</h3>
+<p><strong>CropScout</strong> is a modular agricultural exploration device designed to simulate crop monitoring, environmental sensing, and controlled mechanical interaction.</p>
+<p>The full system consists of seven independent subsystems:</p>
 <ul>
-<li>This needs to be updated to reflect a team introduction</li>
-<li>Content should also help an unfamiliar reader navigate to areas of interest. Information like:</li>
+<li>Human Machine Interface (HMI) Subsystem  </li>
+<li>Wireless Communication Subsystem  </li>
+<li>Mobility Drive Actuation Subsystem  </li>
+<li>Accelerometer Subsystem  </li>
+<li>Front Arm Actuation Subsystem (This Board)  </li>
+<li>Metal Sensor Subsystem  </li>
+<li>Temperature &amp; Humidity Subsystem  </li>
 </ul>
-<p>To review the details listed of the material used to construct the subsection, you can review it in the <a href="https://embedded-systems-design.github.io/EGR314DataSheetTemplate/04-BOM/BOM/">"BOM"</a> section of the datasheet.</p>
-<blockquote>
-<p>Continue for all the remaining/missing sections.</p>
-</blockquote>
+<p>Each subsystem is implemented as its own PCB and communicates using a standardized UART daisy-chain network over an 8-wire ribbon cable. Every board includes its own regulated power supply and must be verified independently before full system integration.</p>
+<p>For a complete system-level overview including Team Organization, Concept Design, Project Requirements and Block Diagram, visit the<br>
+<strong><a href="https://egr314-s-2026-202.github.io/">EGR 314 Team 202 Report</a></strong>
+\</p>
+<h3 id="my-contribution">My Contribution</h3>
+<p>I designed and implemented the <strong>Front Arm Actuation Subsystem</strong>, which is responsible for controlled mechanical motion of CropScout’s manipator assembly.</p>
+<p>My responsibilities included:</p>
+<ul>
+<li>Selecting and integrating the ESP32 microcontroller  </li>
+<li>Designing the 3.3V switching regulator and power architecture  </li>
+<li>Implementing bus power and barrel jack isolation jumpers  </li>
+<li>Interfacing with a serial stepper motor driver  </li>
+<li>Designing the full schematic and PCB layout  </li>
+<li>Developing the UART messaging API  </li>
+<li>Implementing command parsing and motor control logic  </li>
+<li>Verifying safe communication and hardware operation prior to integration  </li>
+</ul>
+<p>This subsystem enables reliable, addressable actuation within CropScout while maintaining safe operation on the shared UART network.</p>
 
 
 
