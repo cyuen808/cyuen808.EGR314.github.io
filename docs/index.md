@@ -8,7 +8,7 @@ tags:
 <font size= "4">Caleb Yuen's Datasheet</font><br>
 as part of<br>
 <font size= "8"> Exploration Device Project</font><br>
-<font size= "7"> S.C.O.U.T.S</font><br>
+<font size= "6"> S.C.O.U.T.S</font><br>
 Super Cool Original and Unique Technology Systems<br>
 <font size= "5"> Team 202 </font><br>
 
@@ -23,9 +23,6 @@ This document is written so that a reader can understand my subsystem without ne
 
 
 ### Project Summary
-
-* This needs to be updated to reflect <ins>your version</ins> of the team project, so when shared not via the team's report, the reader gets an idea of the direction of the project and how your work will contribute to the overall success.
-* Add context that ties into the link to your [EGR 314 Team 202 Report.](https://egr314-s-2026-202.github.io/)
 
 **CropScout** is a modular agricultural exploration device designed to simulate crop monitoring, environmental sensing, and controlled mechanical interaction.
 
