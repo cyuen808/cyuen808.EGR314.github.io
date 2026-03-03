@@ -310,19 +310,12 @@ The D2F-01 was selected because it provides reliable SPDT operation with a 30V D
 
 ---
 
-### Shoulder / Elbow Choice
+### Shoulder / Elbow / Wrist Choice
 
 **Selected Component:** CN0193  
 
 ### Rationale
-The CN0193 was selected for the shoulder and elbow joints because these joints experience the highest torque loads. The 20kg·cm rating provides sufficient lifting capability for the arm structure and payload. Although it draws more current and is physically larger, the added torque margin improves reliability and reduces the risk of stalling under load.
-
-
-### Wrist Choice
-**Selected Component:** Adafruit 2307  
-
-### Rationale
-The Adafruit 2307 was selected for the wrist because this joint requires significantly less torque. Using a smaller servo reduces weight at the end of the arm, lowering inertia and improving responsiveness. It also reduces power consumption while still meeting the functional requirements of the wrist joint.
+The CN0193 was selected for all three joints to ensure sufficient torque during lifting and digging operations. Using the same high-torque servo across the arm improves reliability, reduces the risk of stalling under load, and simplifies mechanical and electrical design.
 
 
 ## Stepper Motors
