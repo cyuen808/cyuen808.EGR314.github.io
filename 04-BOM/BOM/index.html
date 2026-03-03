@@ -689,27 +689,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-table" class="md-nav__link">
+  <a href="#bill-of-materials" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials (Example as Table)
+      Bill of Materials
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-image" class="md-nav__link">
+  <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials (Example as Image)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resouce" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resouce
+      Resources
     </span>
   </a>
   
@@ -959,27 +950,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-table" class="md-nav__link">
+  <a href="#bill-of-materials" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials (Example as Table)
+      Bill of Materials
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#bill-of-materials-example-as-image" class="md-nav__link">
+  <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
-      Bill of Materials (Example as Image)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resouce" class="md-nav__link">
-    <span class="md-ellipsis">
-      Resouce
+      Resources
     </span>
   </a>
   
@@ -1011,60 +993,169 @@
   <h1>Module Bill of Materials</h1>
 
 <h2 id="overview">Overview</h2>
-<p>Written context needs to added!</p>
-<blockquote>
-<p>Pick <strong>ONLY</strong> one of the two examples show below. <strong>Remove</strong> the other example. <strong>REMOVE notations within the remaining section about being an example.</strong>  </p>
-</blockquote>
-<h2 id="bill-of-materials-example-as-table">Bill of Materials (Example as Table)</h2>
-<p><em>Table ##: An example of one approach to adding your BOM table to this section.</em></p>
+<p>The Front-Arm Subsystem controls a NEMA 17 stepper motor and three RC servos using an ESP32-S3-WROOM microcontroller. The system operates from a 14.4V Li-Ion battery or 14V Barrel Jack and includes onboard 5V and 3.3V switching regulation. The stepper motor driver communicates via SPI, and the subsystem connects to the team UART daisy-chain bus.</p>
+<p>Quantities include extra components per assignment requirement for prototyping and redundancy.</p>
+<h2 id="bill-of-materials">Bill of Materials</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;"><strong>Part Name/Description</strong></th>
+<th style="text-align: left;"><strong>Part Name / Description</strong></th>
 <th style="text-align: left;"><strong>Qty</strong></th>
-<th style="text-align: left;"><strong>Unit Cost</strong></th>
-<th style="text-align: left;"><strong>Total Cost</strong></th>
-<th style="text-align: left;"><strong>Manufacture</strong></th>
+<th style="text-align: left;"><strong>Unit Cost ($)</strong></th>
+<th style="text-align: left;"><strong>Total Cost ($)</strong></th>
+<th style="text-align: left;"><strong>Manufacturer</strong></th>
 <th style="text-align: left;"><strong>Manufacturer #</strong></th>
 <th style="text-align: left;"><strong>Vendor Link</strong></th>
 <th style="text-align: left;"><strong>Datasheet Link</strong></th>
-<th style="text-align: left;"><strong>Schematic Reference Designators</strong></th>
+<th style="text-align: left;"><strong>Schematic Ref</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">8-bit SIPO/SISO Shift Register, SOIC-16 package</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">$0.49</td>
-<td style="text-align: left;">$ 0.49</td>
-<td style="text-align: left;">NXP</td>
-<td style="text-align: left;">74HC595D,112</td>
-<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/nexperia-usa-inc/74HC595D-112/763550">DigiKey</a></td>
-<td style="text-align: left;"><a href="https://assets.nexperia.com/documents/data-sheet/74HC_HCT595.pdf">datasheet link</a></td>
-<td style="text-align: left;">U1</td>
+<td style="text-align: left;">3.3V Buck Regulator, 1.5A</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">4.430</td>
+<td style="text-align: left;">13.29</td>
+<td style="text-align: left;">Texas Instruments</td>
+<td style="text-align: left;">LM2651MTCX-3-3-NOPB</td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/texas-instruments/LM2651MTCX-3-3-NOPB/366869">DigiKey</a></td>
+<td style="text-align: left;"><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.ti.com/lit/ds/symlink/lm2651.pdf?ts=1772500009965">datasheet link</a></td>
+<td style="text-align: left;">U2</td>
 </tr>
 <tr>
-<td style="text-align: left;">0.1 µF Ceramic Capacitor, +/-10%, X7R, 50V, 0805 package</td>
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">0.2750</td>
-<td style="text-align: left;">$2.75</td>
-<td style="text-align: left;">KEMET</td>
-<td style="text-align: left;">C0805F104K5RACTU</td>
-<td style="text-align: left;">PRLTA 109</td>
-<td style="text-align: left;">n/a</td>
-<td style="text-align: left;">C2, C4, C6, C7, C8, C9, C10, C11, C12, C16</td>
+<td style="text-align: left;">5V Buck Regulator, 5A</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">7.610</td>
+<td style="text-align: left;">22.83</td>
+<td style="text-align: left;">Texas Instruments</td>
+<td style="text-align: left;">LM22678T-5.0-NOPB</td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/texas-instruments/LM22678TJ-5-0-NOPB/1951972">DigiKey</a></td>
+<td style="text-align: left;"><a href="https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Flm22678">datasheet link</a></td>
+<td style="text-align: left;">U3</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stepper Motor Driver (SPI)</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">3.960</td>
+<td style="text-align: left;">11.88</td>
+<td style="text-align: left;">Texas Instruments</td>
+<td style="text-align: left;">DRV8434SRGER</td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/texas-instruments/DRV8434SRGER/13627140">DigiKey</a></td>
+<td style="text-align: left;"><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.ti.com/lit/ds/symlink/drv8434s.pdf">datasheet link</a></td>
+<td style="text-align: left;">U4</td>
+</tr>
+<tr>
+<td style="text-align: left;">D2F-01F (Homing Switch)</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">1.050</td>
+<td style="text-align: left;">2.10</td>
+<td style="text-align: left;">Omron</td>
+<td style="text-align: left;">SW502-ND</td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/omron-electronics-inc-emc-div/D2F-01F/83266">DigiKey</a></td>
+<td style="text-align: left;"><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/875/D2F_0318_DS.pdf">datasheet link</a></td>
+<td style="text-align: left;">SW1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Barrel Jack (SMT)</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">1.370</td>
+<td style="text-align: left;">4.11</td>
+<td style="text-align: left;">Same Sky</td>
+<td style="text-align: left;">PJ-036AH-SMT-TR</td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/PJ-036AH-SMT-TR/1530971">DigiKey</a></td>
+<td style="text-align: left;"><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.sameskydevices.com/product/resource/pj-036ah-smt-tr.pdf">datasheet link</a></td>
+<td style="text-align: left;">J1</td>
+</tr>
+<tr>
+<td style="text-align: left;">High Torque Servo</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">15.500</td>
+<td style="text-align: left;">62.00</td>
+<td style="text-align: left;">SunFounder</td>
+<td style="text-align: left;">CN0193</td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/sunfounder/CN0193/18668609">DigiKey</a></td>
+<td style="text-align: left;"><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/http://wiki.sunfounder.cc/images/9/9a/TD-8120MG_Digital_Servo.pdf">datasheet link</a></td>
+<td style="text-align: left;">J6, J7, J8</td>
+</tr>
+<tr>
+<td style="text-align: left;">Schottky Diode 80V 3A</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0.600</td>
+<td style="text-align: left;">2.40</td>
+<td style="text-align: left;">onsemi</td>
+<td style="text-align: left;">SS38FSCT-ND</td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/onsemi/SS38/1053651">DigiKey</a></td>
+<td style="text-align: left;"><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.onsemi.com/pdf/datasheet/ss39-d.pdf">datasheet link</a></td>
+<td style="text-align: left;">D1, D2</td>
+</tr>
+<tr>
+<td style="text-align: left;">3A 1206 Fuse</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">1.580</td>
+<td style="text-align: left;">3.16</td>
+<td style="text-align: left;">Littelfuse</td>
+<td style="text-align: left;">0468003.NR</td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/littelfuse-inc/0468003-NR/700870">DigiKey</a></td>
+<td style="text-align: left;"><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.littelfuse.com/assetdocs/fuse-468-datasheet?assetguid=6b7857dc-f79c-4aae-8bcc-a9ef11ddef09">datasheet link</a></td>
+<td style="text-align: left;">F1</td>
+</tr>
+<tr>
+<td style="text-align: left;">14.4V Li-Ion Battery Pack</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">88.970</td>
+<td style="text-align: left;">88.97</td>
+<td style="text-align: left;">GlobTek</td>
+<td style="text-align: left;">BL5000C21704S2PTFM106IBC2NN-ND</td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/globtek-inc/BL5000C21704S2PFTM106IBC2NN/22531453?s=N4IgTCBcDaIEIBkCsAGNBhMBGA7CgLAMpgAKAYgCogC6AvkA">DigiKey</a></td>
+<td style="text-align: left;"><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://spec.globtek.info/spec/pdf/BL5000C21704S2PFTM106IBC2NN">datasheet link</a></td>
+<td style="text-align: left;">J9</td>
+</tr>
+<tr>
+<td style="text-align: left;">NEMA 17 Hybrid Stepper (7V, 1.2A)</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">22.960</td>
+<td style="text-align: left;">45.92</td>
+<td style="text-align: left;">ISL Products</td>
+<td style="text-align: left;">MOT-I-81619</td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/isl-products-international/MOT-I-81619/23628502">DigiKey</a></td>
+<td style="text-align: left;"><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6257/MOT-I-81619.pdf">datasheet link</a></td>
+<td style="text-align: left;">J5</td>
+</tr>
+<tr>
+<td style="text-align: left;">6.8µH Inductor (6.4A)</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">1.130</td>
+<td style="text-align: left;">3.39</td>
+<td style="text-align: left;">Codaca</td>
+<td style="text-align: left;">VSHB0754T-6R8MCCT-ND</td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/codaca/VSHB0754T-6R8MC/16731499">DigiKey</a></td>
+<td style="text-align: left;"><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.codaca.com/Private/pdf/VSHB0754T.pdf">datasheet link</a></td>
+<td style="text-align: left;">L2</td>
+</tr>
+<tr>
+<td style="text-align: left;">68µH Inductor (2A)</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">1.130</td>
+<td style="text-align: left;">3.39</td>
+<td style="text-align: left;">Codaca</td>
+<td style="text-align: left;">VSHB0754T-680MCCT-ND</td>
+<td style="text-align: left;"><a href="https://www.digikey.com/en/products/detail/codaca/VSHB0754T-680MC/16731515">DigiKey</a></td>
+<td style="text-align: left;"><a href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://www.codaca.com/Private/pdf/VSHB0754T.pdf">datasheet link</a></td>
+<td style="text-align: left;">L1</td>
 </tr>
 </tbody>
 </table>
-<p>Note: Setting it up as a table is nice because it is completely viewable without scaling issues. <ins>Downside</ins> is that you have to do the math.</p>
-<ul>
-<li>You could also import your BOM via a screenshot of the spreadsheet created BOM</li>
-</ul>
-<h2 id="bill-of-materials-example-as-image">Bill of Materials (Example as Image)</h2>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../BOM-Screenshot.png" data-desc-position="bottom"><img _2000_="&quot;2000&quot;" alt="" src="../BOM-Screenshot.png" style="style" width:="width:"></a>
-<strong>Figure ##:</strong> Example Bill of Materials as a screenshot.</p>
-<p>As you can see, the text can be difficult to read without opening the image.</p>
-<h2 id="resouce">Resouce</h2>
+<p>SPDT Mini Toggle Switch 3-Pin 2 Position           | 1 | 7.99  | 7.99 | Taiss  | B0799HC3VY | <a href="https://www.amazon.com/MTS-102-125VAC-Position-Miniature-Toggle/dp/B0799HC3VY/ref=sr_1_3?crid=1N6TI53Q9JPVU&amp;dib=eyJ2IjoiMSJ9.aIvYwZPbygsJl1_JSs8UfgDGq9zJ7tq0wmId8w-J5SP5-AQxHyOXeuP40qNgUP4F3PVK-Ih19fI0P9Sv1viCsTbqEOftvtvQ63TFwbfWjTLORUnBGGPlBvlvlVxcLtEPt94nvMDuUeun-8yhGsmREVrf_r1_WEW72bBsXdaaaPaJmOc-DfosLa8imHHIGyYaJzDzPAdJY12KJAUymEkMZ7A_LXTSSQnR4d-YQlWL9ZM.fKxb6_T1VjGbYp_Rj9Y3PcTZM-VsZJ4pnRNc6fFDESk&amp;dib_tag=se&amp;keywords=SWITCH%2BTOGGLE%2BSPDT%2B0.4VA%2B20V&amp;qid=1772473593&amp;sprefix=switch%2Btoggle%2Bspdt%2B0.4va%2B20v%2Caps%2C158&amp;sr=8-3&amp;th=1">Amazon</a> | <a href="">datasheet link</a>  | SW4 |</p>
+<p>0.1µF 0805 Ceramic Capacitors | 11 | --- | --- | Peralta | --- | --- | --- | C3,C5,C6,C8,C11,C12,C15,C16,C17,C18,C20|
+22µF Bulk Capacitors | 4 | --- | --- | Peralta | --- | --- | --- | C1,C2,C14,C19|
+2.2nF Capacitors | 1 | --- | --- | Peralta | --- | --- | --- | C7,C13|
+100µF Capacitors | 2 | --- | --- | Peralta | --- | --- | --- | C9| 
+0.22µF Capacitors | 1 | --- | --- | Peralta | --- | --- | --- | C10|
+10kΩ Resistors | 5 | --- | --- | Peralta | --- | --- | --- | R3,R4,R6,R7,R9|
+15kΩ Resistors | 1 | --- | --- | Peralta | --- | --- | --- | R1|
+47kΩ Resistors | 1 | --- | --- | Peralta | --- | --- | --- | R2|
+330Ω Resistors | 1 | --- | --- | Peralta | --- | --- | --- | R8|</p>
+<h2 id="resources">Resources</h2>
 <p>The Bill of Material as a PDF download is available <a href="../PDF_For_BOM_EXAMPLE.pdf"><em>here</em></a>.</p>
 
 
