@@ -30,9 +30,10 @@ NEMA 17 Hybrid Stepper (7V, 1.2A) | 2  | 22.960  | 45.92 | ISL Products | MOT-I-
 SPDT Mini Toggle Switch 3-Pin 2 Position           | 1 | 7.99  | 7.99 | Taiss  | B0799HC3VY | [Amazon](https://www.amazon.com/MTS-102-125VAC-Position-Miniature-Toggle/dp/B0799HC3VY/ref=sr_1_3?crid=1N6TI53Q9JPVU&dib=eyJ2IjoiMSJ9.aIvYwZPbygsJl1_JSs8UfgDGq9zJ7tq0wmId8w-J5SP5-AQxHyOXeuP40qNgUP4F3PVK-Ih19fI0P9Sv1viCsTbqEOftvtvQ63TFwbfWjTLORUnBGGPlBvlvlVxcLtEPt94nvMDuUeun-8yhGsmREVrf_r1_WEW72bBsXdaaaPaJmOc-DfosLa8imHHIGyYaJzDzPAdJY12KJAUymEkMZ7A_LXTSSQnR4d-YQlWL9ZM.fKxb6_T1VjGbYp_Rj9Y3PcTZM-VsZJ4pnRNc6fFDESk&dib_tag=se&keywords=SWITCH%2BTOGGLE%2BSPDT%2B0.4VA%2B20V&qid=1772473593&sprefix=switch%2Btoggle%2Bspdt%2B0.4va%2B20v%2Caps%2C158&sr=8-3&th=1) | datasheet link  | SW4 |
 0.1µF 0805 Ceramic Capacitors | 11 | N/A | N/A | Peralta | N/A | N/A | N/A | C3,C5,C6,C8,C11,C12,C15,C16,C17,C18,C20|
 22µF Bulk Capacitors | 4 | N/A | N/A | Peralta | N/A | N/A | N/A | C1,C2,C14,C19|
-2.2nF Capacitors | 1 | N/A | N/A | Peralta | N/A | N/A | N/A | C7,C13|
-100µF Capacitors | 2 | N/A | N/A | Peralta | N/A | N/A | N/A | C9| 
+2.2nF Capacitors | 1 | N/A | N/A | Peralta | N/A | N/A | N/A | C4 |
+100µF Capacitors | 2 | N/A | N/A | Peralta | N/A | N/A | N/A | C7,C13| 
 0.22µF Capacitors | 1 | N/A | N/A | Peralta | N/A | N/A | N/A | C10|
+22nF Bulk Capacitors | 1 | N/A | N/A | Peralta | N/A | N/A | N/A | C9|
 10kΩ Resistors | 5 | N/A | N/A | Peralta | N/A | N/A | N/A | R3,R4,R6,R7,R9|
 15kΩ Resistors | 1 | N/A | N/A | Peralta | N/A | N/A | N/A | R1|
 47kΩ Resistors | 1 | N/A | N/A | Peralta | N/A | N/A | N/A | R2|
