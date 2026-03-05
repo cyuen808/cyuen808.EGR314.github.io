@@ -11,7 +11,8 @@ The Symbols for the Barrel jack, ESP32, 3.3V/5V Regulator, and Stepper Motor Dri
 
 The system includes:
 
-- +14V input from 14V barrel jack or 14.4V battery pack
+- 9V input from 9V barrel jack for individual testing
+- 14.4V battery pack supplying for the whole team
 - Protection main SMD fuse on the +14V input rail
 - 5V buck regulator dedicated to servo power
 - 3.3V buck regulator for ESP32-S3 and logic
@@ -32,7 +33,7 @@ This schematic ensures clean power distribution, safe current limiting for the N
 ### Key Functional Blocks
 
 #### Power Management
-- 14V Input Selection (Barrel Jack / Battery)
+- 14.4V Input Selection (Battery)
 - LM22678 5V Buck Regulator for Servos
 - LM2651 3.3V Buck Regulator for ESP32 & Logic
 - Proper decoupling, filtering, and PWR_FLAG validation

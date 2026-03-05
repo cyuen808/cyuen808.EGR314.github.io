@@ -131,69 +131,6 @@ The LM22678TJ-5.0/NOPB was chosen because it can supply up to 5A, giving plenty 
 The LM2651MTCX-3.3/NOPB was selected to power the 3.3V logic rail for the microcontroller and sensors. It provides more than enough current for the system while maintaining good efficiency with its synchronous design. The surface-mount package satisfies project constraints and is easier to work with than smaller wafer-level packages.
 
 
-
-## DC Barrel Jack 14V Input
-
-    1. PJ-036AH-SMT-TR  
-
-<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/884/MFG_PJ-036AH-SMT.jpg?hidebanner=true" width="120">
-
-* $1.37/each  
-* [Link to product](https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/PJ-036AH-SMT-TR/1530971)
-
-| Pros | Cons |
-|------|------|
-| Surface-mount, right-angle design. | Rated for 24V and 5A (adequate but not oversized). |
-| 2.1mm ID / 5.5mm OD (standard barrel size). | Slightly more expensive than other options. |
-| 5A current rating supports motor loads. | Larger footprint. |
-| Includes internal switch (can disconnect external supply automatically). | Moderate PCB space required. |
-
----
-
-
-    2. 54-00164  
-
-<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/211/MFG_54-00164.jpg?hidebanner=true" width="120">
-
-* $0.86/each  
-* [Link to product](https://www.digikey.com/en/products/detail/tensility-international-corp/54-00164/10459298)
-
-| Pros | Cons |
-|------|------|
-| Lower cost option. | Slightly lower build robustness compared to Same Sky parts. |
-| Surface-mount, right-angle. | 5.5A rating is close to system maximum. |
-| 2.1mm ID / 5.5mm OD standard size. | Larger footprint. |
-| 48V rating provides voltage margin. | No special locking feature. |
-
----
-
-
-
-    3. PJ-006A-SMT-TR  
-
-<img src="https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/6135/MFG_PJ-006A-SMT.jpg?hidebanner=true" width="120">
-
-* $0.95/each  
-* [Link to product](https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/PJ-006A-SMT-TR/408456)
-
-| Pros | Cons |
-|------|------|
-| Surface-mount. | 4A current rating (lower than other options). |
-| Standard 2.1mm / 5.5mm barrel size. | 18V rating (less headroom if future input voltage increases). |
-| Compact footprint. | Lower current capacity for high motor loads. |
-| Lower cost. | Fewer safety margins compared to 5A-rated options. |
-
----
-
-
-### Barrel Jack Choice
-**Selected Component:** PJ-036AH-SMT-TR (2.1mm ID / 5.5mm OD, right-angle, SMT)
-
-### Rationale  
-The PJ-036AH-SMT-TR was selected because it is a surface-mount, right-angle barrel jack with a 5A current rating, giving solid headroom for the rover’s power needs. It uses the standard 2.1mm x 5.5mm barrel size, so it matches common 9–12V adapters. This part also provides a reliable mechanical connection while keeping assembly simple and consistent with the project’s surface-mount design approach.
-
-
-
 ## Switch
 
 ## Homing (Limit) Switch Options

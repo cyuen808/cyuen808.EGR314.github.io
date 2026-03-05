@@ -13,7 +13,7 @@ The subsystem performs two primary actuation tasks:
 - Stepper motor control for base rotation using an SPI-controlled stepper motor driver  
 - Direct PWM control of three RC servos (shoulder, elbow, wrist)
 
-Separate regulated power domains are implemented for logic (3.3V), servo power (5V), and high-current motor power (14V).
+Separate regulated power domains are implemented for logic (3.3V), servo power (5V), and high-current motor power.
 A homing switch provides positional reference feedback through a GPIO input.
 
 ![Front Arm Subsystem Block Diagram](FrontArmSubsystem.png)
@@ -30,10 +30,10 @@ A homing switch provides positional reference feedback through a GPIO input.
   Homing switch input
 
 ### Power Architecture
-- **+14V DC input** via barrel jack  
+- **9V DC input** via barrel jack for Individual testing 
 - **3.3V switching regulator** for MCU and logic  
 - **5V regulator** for servo power  
-- **+14V rail** used directly by the stepper motor driver  
+- **+14V rail** used directly by the stepper motor driver and supplying the team   
 
 > **Note:** RC servos are included as stretch goals and are an instructor-approved exception to the standard EGR 314 actuator constraints.
 
