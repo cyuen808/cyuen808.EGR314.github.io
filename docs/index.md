@@ -17,14 +17,14 @@ Super Cool Original and Unique Technology Systems<br>
 
 ## Introduction
 
-Welcome to my individual subsystem datasheet for **CropScout**, a modular agricultural exploration rover developed in EGR 314.
-This page documents the design, implementation, and verification of my **Front Arm Actuation Subsystem**. The purpose of this datasheet is to provide a standalone technical reference that clearly explains what this board does, how it operates, and how it integrates into the team’s UART daisy-chain system.
+Welcome to my individual subsystem datasheet for CropScout, a modular agricultural exploration rover developed in EGR 314.
+This page documents the design, implementation, and verification of my Front Arm Actuation Subsystem. The purpose of this datasheet is to provide a standalone technical reference that clearly explains what this board does, how it operates, and how it integrates into the team’s UART daisy-chain system.
 This document is written so that a reader can understand my subsystem without needing to reference the team report.
 
 
 ### Project Summary
 
-**CropScout** is a modular agricultural exploration device designed to simulate crop monitoring, environmental sensing, and controlled mechanical interaction.
+CropScout is a modular agricultural exploration device designed to simulate crop monitoring, environmental sensing, and controlled mechanical interaction.
 
 The full system consists of seven independent subsystems:
 
@@ -32,7 +32,7 @@ The full system consists of seven independent subsystems:
 - Wireless Communication Subsystem  
 - Mobility Drive Actuation Subsystem  
 - Accelerometer Subsystem  
-- Front Arm Actuation Subsystem (This Board)  
+- Front Arm Actuation Subsystem 
 - Metal Sensor Subsystem  
 - Temperature & Humidity Subsystem  
 
@@ -40,11 +40,11 @@ Each subsystem is implemented as its own PCB and communicates using a standardiz
 
 For a complete system-level overview including Team Organization, Concept Design, Project Requirements and Block Diagram, visit the  
 **[EGR 314 Team 202 Report](https://egr314-s-2026-202.github.io/)**
-\
+
 
 ### My Contribution
 
-I designed and implemented the **Front Arm Actuation Subsystem**, which is responsible for controlled mechanical motion of CropScout’s manipator assembly.
+I designed and implemented the Front Arm Actuation Subsystem, which is responsible for controlled mechanical motion of CropScout’s manipator assembly.
 
 My responsibilities included:
 
