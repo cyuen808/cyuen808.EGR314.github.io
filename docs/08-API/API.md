@@ -8,7 +8,7 @@ This page defines the UART message interface for Caleb’s Front Arm subsystem. 
 This API only defines the message data field inside the class packet. Prefix, suffix, sender ID, and receiver ID are handled by the class UART packet format.
 
 ## Subsystem ID
-- Front Arm Board ID: 5   <!-- replace with your actual ID -->
+- Front Arm Board ID: a   <!-- replace with your actual ID -->
 
 ## Messages Received
 
@@ -64,6 +64,20 @@ Reports arm faults.
 |------|---------------|-----------|-------|-----|-----|-------------|
 | 1 | message_type | uint8_t | 1 | 0 | 255 | Message ID for ARM_ERROR |
 | 2 | error_code | uint8_t | 1 | 0 | 10 | 0 = none, 1 = stall, 2 = overcurrent, 3 = collision halt |
+
+
+## Known Subsystem IDs
+
+| Subsystem | ID |
+|----------|----|
+| HMI | 'h' |
+| Comm | 'c' |
+| Wheel | 'w' |
+| Pressure | 'P' |
+| Arm | 'a' |
+| Metal | 'm' |
+| Temp | 't' |
+
 
 ## Receiver Behavior
 The Front Arm subsystem:
