@@ -1,108 +1,89 @@
 ---
-title: Power Budget
+title: API
 ---
-
-# Power Budget
 
 ## Overview
+This page defines the UART message interface for Caleb’s Front Arm subsystem. The Front Arm subsystem receives commands from the HMI or wireless subsystem, executes motion commands for the arm base, and returns acknowledgements and status messages to the team network.
 
-This power budget verifies that the selected regulators and external supply can safely power all major components in the subsystem. Maximum current values were taken from component datasheets and a 25% safety margin was added per EGR 314 requirements.
+This API only defines the message data field inside the class packet. Prefix, suffix, sender ID, and receiver ID are handled by the class UART packet format.
 
----
+## Subsystem ID
+- Front Arm Board ID: 5   <!-- replace with your actual ID -->
 
-# Section A – Major Power-Consuming Components
+## Messages Received
 
-| Component | Voltage Rail | Max Current (A) |
-|------------|--------------|----------------|
-| PIC18F47K42 | 3.3V | 0.05 A |
-| DRV8434SRGER (logic) | 3.3V | 0.02 A |
-| Stepper Motor (MOT-I-81619) | 9V Rail | 1.20 A |
-| CN0193 Servo (Shoulder) | 5V | 1.50 A (stall) |
-| CN0193 Servo (Elbow) | 5V | 1.50 A (stall) |
-| Adafruit 2307 Servo (Wrist) | 5V | 0.80 A (stall) |
+### Message: SET_POSITION
+Used to command the front arm to move to a target position.
 
-*Note: Servo currents represent stall conditions (worst case).*
+| Byte | Variable Name | Data Type | Bytes | Min | Max | Description |
+|------|---------------|-----------|-------|-----|-----|-------------|
+| 1 | message_type | uint8_t | 1 | 0 | 255 | Message ID for SET_POSITION |
+| 2 | angle_deg | int16_t | 2 | -180 | 180 | Desired arm angle in degrees |
 
----
+Example:
+- angle_deg = 90
 
-# Section B – Power Rail Totals (With 25% Safety Margin)
+### Message: JOG_ENABLE
+Used to enable or stop jog motion.
 
-## 3.3V Rail
+| Byte | Variable Name | Data Type | Bytes | Min | Max | Description |
+|------|---------------|-----------|-------|-----|-----|-------------|
+| 1 | message_type | uint8_t | 1 | 0 | 255 | Message ID for JOG_ENABLE |
+| 2 | enable | uint8_t | 1 | 0 | 1 | 1 = move, 0 = stop |
 
-Total current:
-0.05 + 0.02 = **0.07 A**
+### Message: COLLISION_STATUS
+Sent from the accelerometer subsystem to allow or stop motion.
 
-With 25% margin:
-0.07 × 1.25 = **0.088 A**
+| Byte | Variable Name | Data Type | Bytes | Min | Max | Description |
+|------|---------------|-----------|-------|-----|-----|-------------|
+| 1 | message_type | uint8_t | 1 | 0 | 255 | Message ID for COLLISION_STATUS |
+| 2 | safe_flag | uint8_t | 1 | 0 | 1 | 1 = safe to continue, 0 = halt |
 
-Selected Regulator: LM2651MTCX-3.3 (1.5A max)
+## Messages Sent
 
-✔ Regulator capacity exceeds required current.
+### Message: ACK_POSITION
+Sent after the front arm reaches the requested position.
 
----
+| Byte | Variable Name | Data Type | Bytes | Min | Max | Description |
+|------|---------------|-----------|-------|-----|-----|-------------|
+| 1 | message_type | uint8_t | 1 | 0 | 255 | Message ID for ACK_POSITION |
+| 2 | actual_angle_deg | int16_t | 2 | -180 | 180 | Final measured or commanded position |
 
-## 5V Rail
+### Message: ARM_STATUS
+Reports current arm state.
 
-Total servo stall current:
-1.50 + 1.50 + 0.80 = **3.80 A**
+| Byte | Variable Name | Data Type | Bytes | Min | Max | Description |
+|------|---------------|-----------|-------|-----|-----|-------------|
+| 1 | message_type | uint8_t | 1 | 0 | 255 | Message ID for ARM_STATUS |
+| 2 | status_code | uint8_t | 1 | 0 | 3 | 0 = idle, 1 = moving, 2 = done, 3 = halted |
 
-With 25% margin:
-3.80 × 1.25 = **4.75 A**
+### Message: ARM_ERROR
+Reports arm faults.
 
-Selected Regulator: LM22678TJ-5.0 (5A max)
+| Byte | Variable Name | Data Type | Bytes | Min | Max | Description |
+|------|---------------|-----------|-------|-----|-----|-------------|
+| 1 | message_type | uint8_t | 1 | 0 | 255 | Message ID for ARM_ERROR |
+| 2 | error_code | uint8_t | 1 | 0 | 10 | 0 = none, 1 = stall, 2 = overcurrent, 3 = collision halt |
 
-✔ Regulator capacity slightly exceeds required worst-case load.
-⚠ Large output capacitors recommended due to servo transients.
+## Receiver Behavior
+The Front Arm subsystem:
+- receives all UART packets from the daisy chain
+- ignores bytes outside a valid frame
+- ignores malformed packets
+- ignores packets larger than the buffer
+- forwards packets not addressed to this board
+- processes packets addressed to this board
+- discards packets sent by itself if they loop back
+- sends an acknowledgement for each valid supported command
 
----
+## Sender Behavior
+The Front Arm subsystem:
+- sends ACK_POSITION after motion completes
+- sends ARM_STATUS during or after motion
+- sends ARM_ERROR if a fault occurs
+- limits send rate using a timer-based non-blocking interval
+- prioritizes forwarding incoming messages before sending its own
 
-## 9V Rail (Motor Supply)
-
-Stepper Motor max current:
-1.20 A
-
-With 25% margin:
-1.20 × 1.25 = **1.50 A**
-
-External Supply Required:
-Minimum 9V @ 2A recommended
-
----
-
-# Section C – Regulator Selection
-
-| Rail | Regulator | Max Output | Required | Status |
-|-------|------------|------------|----------|--------|
-| 3.3V | LM2651MTCX-3.3 | 1.5A | 0.088A | ✔ Safe |
-| 5V | LM22678TJ-5.0 | 5A | 4.75A | ✔ Safe |
-| 9V | External Adapter | ≥2A | 1.50A | ✔ Safe |
-
----
-
-# Section D – External Power Source
-
-Selected External Supply:
-9V DC Wall Adapter (minimum 2A rating)
-
-Total Worst-Case System Draw:
-Approximately 5–6A combined across rails (not simultaneous peak on all rails due to regulator conversion).
-
-The selected adapter provides sufficient headroom when accounting for regulator efficiency and transient loads.
-
----
-
-# Conclusion
-
-All power rails meet the 25% safety margin requirement. The selected 5V and 3.3V switching regulators provide sufficient current capacity for worst-case operation. The 9V external supply recommendation ensures adequate power delivery for motor and servo loads.
-
-(Final spreadsheet version to be attached.)
-
-
-### Power Budget 
-![Power Budget](ADD Image)
-
-## Downloads
-The Power Budget template can be downloaded below:  
-
-- [Power Budget (.xlsx)](Excel File)  
-- [Power Budget (.pdf)](PDF file) 
+## Software Link
+- [ZIP of source code](./front_arm_api_code.zip)
+- [Main repository](./)
