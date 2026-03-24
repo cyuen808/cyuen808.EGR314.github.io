@@ -26,7 +26,7 @@
 
     
       
-        <title>Power Budget - EGR 314 Caleb Yuen Datasheet</title>
+        <title>API - EGR 314 Caleb Yuen Datasheet</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#power-budget" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Power Budget
+              API
             
           </span>
         </div>
@@ -802,14 +802,12 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    Power Budget
+    API
   </span>
   
 
@@ -820,7 +818,7 @@
         
   
   <span class="md-ellipsis">
-    Power Budget
+    API
   </span>
   
 
@@ -831,8 +829,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  
-    
   
   
     <label class="md-nav__title" for="__toc">
@@ -845,6 +841,126 @@
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsystem-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsystem ID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messages-received" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages Received
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Messages Received">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#message-set_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message: SET_POSITION
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-jog_enable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message: JOG_ENABLE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-collision_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message: COLLISION_STATUS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messages-sent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages Sent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Messages Sent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#message-ack_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message: ACK_POSITION
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-arm_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message: ARM_STATUS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-arm_error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message: ARM_ERROR
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#receiver-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Receiver Behavior
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sender-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sender Behavior
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Link
     </span>
   </a>
   
@@ -985,8 +1101,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -998,6 +1112,126 @@
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subsystem-id" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsystem ID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messages-received" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages Received
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Messages Received">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#message-set_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message: SET_POSITION
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-jog_enable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message: JOG_ENABLE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-collision_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message: COLLISION_STATUS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#messages-sent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Messages Sent
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Messages Sent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#message-ack_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message: ACK_POSITION
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-arm_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message: ARM_STATUS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message-arm_error" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message: ARM_ERROR
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#receiver-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Receiver Behavior
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sender-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sender Behavior
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-link" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software Link
     </span>
   </a>
   
@@ -1026,133 +1260,250 @@
   
 
 
-<h1 id="power-budget">Power Budget</h1>
+  <h1>API</h1>
+
 <h2 id="overview">Overview</h2>
-<p>This power budget verifies that the selected regulators and external supply can safely power all major components in the subsystem. Maximum current values were taken from component datasheets and a 25% safety margin was added per EGR 314 requirements.</p>
-<hr>
-<h1 id="section-a-major-power-consuming-components">Section A – Major Power-Consuming Components</h1>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Voltage Rail</th>
-<th>Max Current (A)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>PIC18F47K42</td>
-<td>3.3V</td>
-<td>0.05 A</td>
-</tr>
-<tr>
-<td>DRV8434SRGER (logic)</td>
-<td>3.3V</td>
-<td>0.02 A</td>
-</tr>
-<tr>
-<td>Stepper Motor (MOT-I-81619)</td>
-<td>9V Rail</td>
-<td>1.20 A</td>
-</tr>
-<tr>
-<td>CN0193 Servo (Shoulder)</td>
-<td>5V</td>
-<td>1.50 A (stall)</td>
-</tr>
-<tr>
-<td>CN0193 Servo (Elbow)</td>
-<td>5V</td>
-<td>1.50 A (stall)</td>
-</tr>
-<tr>
-<td>Adafruit 2307 Servo (Wrist)</td>
-<td>5V</td>
-<td>0.80 A (stall)</td>
-</tr>
-</tbody>
-</table>
-<p><em>Note: Servo currents represent stall conditions (worst case).</em></p>
-<hr>
-<h1 id="section-b-power-rail-totals-with-25-safety-margin">Section B – Power Rail Totals (With 25% Safety Margin)</h1>
-<h2 id="33v-rail">3.3V Rail</h2>
-<p>Total current:
-0.05 + 0.02 = <strong>0.07 A</strong></p>
-<p>With 25% margin:
-0.07 × 1.25 = <strong>0.088 A</strong></p>
-<p>Selected Regulator: LM2651MTCX-3.3 (1.5A max)</p>
-<p>✔ Regulator capacity exceeds required current.</p>
-<hr>
-<h2 id="5v-rail">5V Rail</h2>
-<p>Total servo stall current:
-1.50 + 1.50 + 0.80 = <strong>3.80 A</strong></p>
-<p>With 25% margin:
-3.80 × 1.25 = <strong>4.75 A</strong></p>
-<p>Selected Regulator: LM22678TJ-5.0 (5A max)</p>
-<p>✔ Regulator capacity slightly exceeds required worst-case load.
-⚠ Large output capacitors recommended due to servo transients.</p>
-<hr>
-<h2 id="9v-rail-motor-supply">9V Rail (Motor Supply)</h2>
-<p>Stepper Motor max current:
-1.20 A</p>
-<p>With 25% margin:
-1.20 × 1.25 = <strong>1.50 A</strong></p>
-<p>External Supply Required:
-Minimum 9V @ 2A recommended</p>
-<hr>
-<h1 id="section-c-regulator-selection">Section C – Regulator Selection</h1>
-<table>
-<thead>
-<tr>
-<th>Rail</th>
-<th>Regulator</th>
-<th>Max Output</th>
-<th>Required</th>
-<th>Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>3.3V</td>
-<td>LM2651MTCX-3.3</td>
-<td>1.5A</td>
-<td>0.088A</td>
-<td>✔ Safe</td>
-</tr>
-<tr>
-<td>5V</td>
-<td>LM22678TJ-5.0</td>
-<td>5A</td>
-<td>4.75A</td>
-<td>✔ Safe</td>
-</tr>
-<tr>
-<td>9V</td>
-<td>External Adapter</td>
-<td>≥2A</td>
-<td>1.50A</td>
-<td>✔ Safe</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h1 id="section-d-external-power-source">Section D – External Power Source</h1>
-<p>Selected External Supply:
-9V DC Wall Adapter (minimum 2A rating)</p>
-<p>Total Worst-Case System Draw:
-Approximately 5–6A combined across rails (not simultaneous peak on all rails due to regulator conversion).</p>
-<p>The selected adapter provides sufficient headroom when accounting for regulator efficiency and transient loads.</p>
-<hr>
-<h1 id="conclusion">Conclusion</h1>
-<p>All power rails meet the 25% safety margin requirement. The selected 5V and 3.3V switching regulators provide sufficient current capacity for worst-case operation. The 9V external supply recommendation ensures adequate power delivery for motor and servo loads.</p>
-<p>(Final spreadsheet version to be attached.)</p>
-<h3 id="power-budget_1">Power Budget</h3>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="ADD Image" data-desc-position="bottom"><img alt="Power Budget" src="ADD Image"></a></p>
-<h2 id="downloads">Downloads</h2>
-<p>The Power Budget template can be downloaded below:  </p>
+<p>This page defines the UART message interface for Caleb’s Front Arm subsystem. The Front Arm subsystem receives commands from the HMI or wireless subsystem, executes motion commands for the arm base, and returns acknowledgements and status messages to the team network.</p>
+<p>This API only defines the message data field inside the class packet. Prefix, suffix, sender ID, and receiver ID are handled by the class UART packet format.</p>
+<h2 id="subsystem-id">Subsystem ID</h2>
 <ul>
-<li><a href="Excel File">Power Budget (.xlsx)</a>  </li>
-<li><a href="PDF file">Power Budget (.pdf)</a> </li>
+<li>Front Arm Board ID: 5   <!-- replace with your actual ID --></li>
+</ul>
+<h2 id="messages-received">Messages Received</h2>
+<h3 id="message-set_position">Message: SET_POSITION</h3>
+<p>Used to command the front arm to move to a target position.</p>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Variable Name</th>
+<th>Data Type</th>
+<th>Bytes</th>
+<th>Min</th>
+<th>Max</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>message_type</td>
+<td>uint8_t</td>
+<td>1</td>
+<td>0</td>
+<td>255</td>
+<td>Message ID for SET_POSITION</td>
+</tr>
+<tr>
+<td>2</td>
+<td>angle_deg</td>
+<td>int16_t</td>
+<td>2</td>
+<td>-180</td>
+<td>180</td>
+<td>Desired arm angle in degrees</td>
+</tr>
+</tbody>
+</table>
+<p>Example:
+- angle_deg = 90</p>
+<h3 id="message-jog_enable">Message: JOG_ENABLE</h3>
+<p>Used to enable or stop jog motion.</p>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Variable Name</th>
+<th>Data Type</th>
+<th>Bytes</th>
+<th>Min</th>
+<th>Max</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>message_type</td>
+<td>uint8_t</td>
+<td>1</td>
+<td>0</td>
+<td>255</td>
+<td>Message ID for JOG_ENABLE</td>
+</tr>
+<tr>
+<td>2</td>
+<td>enable</td>
+<td>uint8_t</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1 = move, 0 = stop</td>
+</tr>
+</tbody>
+</table>
+<h3 id="message-collision_status">Message: COLLISION_STATUS</h3>
+<p>Sent from the accelerometer subsystem to allow or stop motion.</p>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Variable Name</th>
+<th>Data Type</th>
+<th>Bytes</th>
+<th>Min</th>
+<th>Max</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>message_type</td>
+<td>uint8_t</td>
+<td>1</td>
+<td>0</td>
+<td>255</td>
+<td>Message ID for COLLISION_STATUS</td>
+</tr>
+<tr>
+<td>2</td>
+<td>safe_flag</td>
+<td>uint8_t</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1 = safe to continue, 0 = halt</td>
+</tr>
+</tbody>
+</table>
+<h2 id="messages-sent">Messages Sent</h2>
+<h3 id="message-ack_position">Message: ACK_POSITION</h3>
+<p>Sent after the front arm reaches the requested position.</p>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Variable Name</th>
+<th>Data Type</th>
+<th>Bytes</th>
+<th>Min</th>
+<th>Max</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>message_type</td>
+<td>uint8_t</td>
+<td>1</td>
+<td>0</td>
+<td>255</td>
+<td>Message ID for ACK_POSITION</td>
+</tr>
+<tr>
+<td>2</td>
+<td>actual_angle_deg</td>
+<td>int16_t</td>
+<td>2</td>
+<td>-180</td>
+<td>180</td>
+<td>Final measured or commanded position</td>
+</tr>
+</tbody>
+</table>
+<h3 id="message-arm_status">Message: ARM_STATUS</h3>
+<p>Reports current arm state.</p>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Variable Name</th>
+<th>Data Type</th>
+<th>Bytes</th>
+<th>Min</th>
+<th>Max</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>message_type</td>
+<td>uint8_t</td>
+<td>1</td>
+<td>0</td>
+<td>255</td>
+<td>Message ID for ARM_STATUS</td>
+</tr>
+<tr>
+<td>2</td>
+<td>status_code</td>
+<td>uint8_t</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>0 = idle, 1 = moving, 2 = done, 3 = halted</td>
+</tr>
+</tbody>
+</table>
+<h3 id="message-arm_error">Message: ARM_ERROR</h3>
+<p>Reports arm faults.</p>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Variable Name</th>
+<th>Data Type</th>
+<th>Bytes</th>
+<th>Min</th>
+<th>Max</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>message_type</td>
+<td>uint8_t</td>
+<td>1</td>
+<td>0</td>
+<td>255</td>
+<td>Message ID for ARM_ERROR</td>
+</tr>
+<tr>
+<td>2</td>
+<td>error_code</td>
+<td>uint8_t</td>
+<td>1</td>
+<td>0</td>
+<td>10</td>
+<td>0 = none, 1 = stall, 2 = overcurrent, 3 = collision halt</td>
+</tr>
+</tbody>
+</table>
+<h2 id="receiver-behavior">Receiver Behavior</h2>
+<p>The Front Arm subsystem:
+- receives all UART packets from the daisy chain
+- ignores bytes outside a valid frame
+- ignores malformed packets
+- ignores packets larger than the buffer
+- forwards packets not addressed to this board
+- processes packets addressed to this board
+- discards packets sent by itself if they loop back
+- sends an acknowledgement for each valid supported command</p>
+<h2 id="sender-behavior">Sender Behavior</h2>
+<p>The Front Arm subsystem:
+- sends ACK_POSITION after motion completes
+- sends ARM_STATUS during or after motion
+- sends ARM_ERROR if a fault occurs
+- limits send rate using a timer-based non-blocking interval
+- prioritizes forwarding incoming messages before sending its own</p>
+<h2 id="software-link">Software Link</h2>
+<ul>
+<li><a href="./front_arm_api_code.zip">ZIP of source code</a></li>
+<li><a href="./">Main repository</a></li>
 </ul>
 
 
