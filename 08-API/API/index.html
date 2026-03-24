@@ -940,6 +940,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#known-subsystem-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Subsystem IDs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#receiver-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       Receiver Behavior
@@ -1211,6 +1220,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#known-subsystem-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Subsystem IDs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#receiver-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       Receiver Behavior
@@ -1267,7 +1285,7 @@
 <p>This API only defines the message data field inside the class packet. Prefix, suffix, sender ID, and receiver ID are handled by the class UART packet format.</p>
 <h2 id="subsystem-id">Subsystem ID</h2>
 <ul>
-<li>Front Arm Board ID: 5   <!-- replace with your actual ID --></li>
+<li>Front Arm Board ID: a   <!-- replace with your actual ID --></li>
 </ul>
 <h2 id="messages-received">Messages Received</h2>
 <h3 id="message-set_position">Message: SET_POSITION</h3>
@@ -1480,6 +1498,45 @@
 <td>0</td>
 <td>10</td>
 <td>0 = none, 1 = stall, 2 = overcurrent, 3 = collision halt</td>
+</tr>
+</tbody>
+</table>
+<h2 id="known-subsystem-ids">Known Subsystem IDs</h2>
+<table>
+<thead>
+<tr>
+<th>Subsystem</th>
+<th>ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HMI</td>
+<td>'h'</td>
+</tr>
+<tr>
+<td>Comm</td>
+<td>'c'</td>
+</tr>
+<tr>
+<td>Wheel</td>
+<td>'w'</td>
+</tr>
+<tr>
+<td>Pressure</td>
+<td>'P'</td>
+</tr>
+<tr>
+<td>Arm</td>
+<td>'a'</td>
+</tr>
+<tr>
+<td>Metal</td>
+<td>'m'</td>
+</tr>
+<tr>
+<td>Temp</td>
+<td>'t'</td>
 </tr>
 </tbody>
 </table>
