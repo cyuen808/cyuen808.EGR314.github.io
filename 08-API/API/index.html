@@ -856,6 +856,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#subsystem-addressing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsystem Addressing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-subsystem-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Subsystem IDs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#messages-received" class="md-nav__link">
     <span class="md-ellipsis">
       Messages Received
@@ -936,15 +954,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#known-subsystem-ids" class="md-nav__link">
-    <span class="md-ellipsis">
-      Known Subsystem IDs
-    </span>
-  </a>
   
 </li>
       
@@ -1136,6 +1145,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#subsystem-addressing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Subsystem Addressing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-subsystem-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Subsystem IDs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#messages-received" class="md-nav__link">
     <span class="md-ellipsis">
       Messages Received
@@ -1220,15 +1247,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#known-subsystem-ids" class="md-nav__link">
-    <span class="md-ellipsis">
-      Known Subsystem IDs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#receiver-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       Receiver Behavior
@@ -1287,9 +1305,55 @@
 <ul>
 <li>Front Arm Board ID: a   <!-- replace with your actual ID --></li>
 </ul>
+<h2 id="subsystem-addressing">Subsystem Addressing</h2>
+<p>All subsystems communicate using ASCII character IDs.</p>
+<p>Messages include:
+- sender ID
+- receiver ID</p>
+<p>If a message is not addressed to this subsystem ('a'), it is forwarded unchanged.<br>
+If a message is addressed to this subsystem, it is processed.</p>
+<h2 id="known-subsystem-ids">Known Subsystem IDs</h2>
+<table>
+<thead>
+<tr>
+<th>Subsystem</th>
+<th>ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HMI</td>
+<td>'h'</td>
+</tr>
+<tr>
+<td>Comm</td>
+<td>'c'</td>
+</tr>
+<tr>
+<td>Wheel</td>
+<td>'w'</td>
+</tr>
+<tr>
+<td>Pressure</td>
+<td>'P'</td>
+</tr>
+<tr>
+<td>Arm</td>
+<td>'a'</td>
+</tr>
+<tr>
+<td>Metal</td>
+<td>'m'</td>
+</tr>
+<tr>
+<td>Temp</td>
+<td>'t'</td>
+</tr>
+</tbody>
+</table>
 <h2 id="messages-received">Messages Received</h2>
 <h3 id="message-set_position">Message: SET_POSITION</h3>
-<p>Used to command the front arm to move to a target position.</p>
+<p>Sent from HMI ('h') to Front Arm ('a') to command arm rotation.</p>
 <table>
 <thead>
 <tr>
@@ -1361,7 +1425,7 @@
 </tbody>
 </table>
 <h3 id="message-collision_status">Message: COLLISION_STATUS</h3>
-<p>Sent from the accelerometer subsystem to allow or stop motion.</p>
+<p>Sent from Pressure ('P') to indicate safe or collision.</p>
 <table>
 <thead>
 <tr>
@@ -1397,7 +1461,7 @@
 </table>
 <h2 id="messages-sent">Messages Sent</h2>
 <h3 id="message-ack_position">Message: ACK_POSITION</h3>
-<p>Sent after the front arm reaches the requested position.</p>
+<p>Sent from Front Arm ('a') to HMI ('h') after movement.</p>
 <table>
 <thead>
 <tr>
@@ -1498,45 +1562,6 @@
 <td>0</td>
 <td>10</td>
 <td>0 = none, 1 = stall, 2 = overcurrent, 3 = collision halt</td>
-</tr>
-</tbody>
-</table>
-<h2 id="known-subsystem-ids">Known Subsystem IDs</h2>
-<table>
-<thead>
-<tr>
-<th>Subsystem</th>
-<th>ID</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>HMI</td>
-<td>'h'</td>
-</tr>
-<tr>
-<td>Comm</td>
-<td>'c'</td>
-</tr>
-<tr>
-<td>Wheel</td>
-<td>'w'</td>
-</tr>
-<tr>
-<td>Pressure</td>
-<td>'P'</td>
-</tr>
-<tr>
-<td>Arm</td>
-<td>'a'</td>
-</tr>
-<tr>
-<td>Metal</td>
-<td>'m'</td>
-</tr>
-<tr>
-<td>Temp</td>
-<td>'t'</td>
 </tr>
 </tbody>
 </table>
