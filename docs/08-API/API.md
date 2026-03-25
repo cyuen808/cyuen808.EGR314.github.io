@@ -10,10 +10,33 @@ This API only defines the message data field inside the class packet. Prefix, su
 ## Subsystem ID
 - Front Arm Board ID: a   <!-- replace with your actual ID -->
 
+## Subsystem Addressing
+
+All subsystems communicate using ASCII character IDs.
+
+Messages include:
+- sender ID
+- receiver ID
+
+If a message is not addressed to this subsystem ('a'), it is forwarded unchanged.  
+If a message is addressed to this subsystem, it is processed.
+
+## Known Subsystem IDs
+
+| Subsystem | ID |
+|----------|----|
+| HMI | 'h' |
+| Comm | 'c' |
+| Wheel | 'w' |
+| Pressure | 'P' |
+| Arm | 'a' |
+| Metal | 'm' |
+| Temp | 't' |
+
 ## Messages Received
 
 ### Message: SET_POSITION
-Used to command the front arm to move to a target position.
+Sent from HMI ('h') to Front Arm ('a') to command arm rotation.
 
 | Byte | Variable Name | Data Type | Bytes | Min | Max | Description |
 |------|---------------|-----------|-------|-----|-----|-------------|
@@ -32,7 +55,7 @@ Used to enable or stop jog motion.
 | 2 | enable | uint8_t | 1 | 0 | 1 | 1 = move, 0 = stop |
 
 ### Message: COLLISION_STATUS
-Sent from the accelerometer subsystem to allow or stop motion.
+Sent from Pressure ('P') to indicate safe or collision.
 
 | Byte | Variable Name | Data Type | Bytes | Min | Max | Description |
 |------|---------------|-----------|-------|-----|-----|-------------|
@@ -42,7 +65,7 @@ Sent from the accelerometer subsystem to allow or stop motion.
 ## Messages Sent
 
 ### Message: ACK_POSITION
-Sent after the front arm reaches the requested position.
+Sent from Front Arm ('a') to HMI ('h') after movement.
 
 | Byte | Variable Name | Data Type | Bytes | Min | Max | Description |
 |------|---------------|-----------|-------|-----|-----|-------------|
@@ -65,18 +88,6 @@ Reports arm faults.
 | 1 | message_type | uint8_t | 1 | 0 | 255 | Message ID for ARM_ERROR |
 | 2 | error_code | uint8_t | 1 | 0 | 10 | 0 = none, 1 = stall, 2 = overcurrent, 3 = collision halt |
 
-
-## Known Subsystem IDs
-
-| Subsystem | ID |
-|----------|----|
-| HMI | 'h' |
-| Comm | 'c' |
-| Wheel | 'w' |
-| Pressure | 'P' |
-| Arm | 'a' |
-| Metal | 'm' |
-| Temp | 't' |
 
 
 ## Receiver Behavior
