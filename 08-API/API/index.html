@@ -1359,24 +1359,24 @@ If a message is addressed to this subsystem, it is processed.</p>
 <p>All messages are transmitted using the class UART frame:</p>
 <p><code>AZ [Sender] [Receiver] [Message Data] YB</code></p>
 <p>Examples:
-- <code>AZhaAD:S:U;YB</code>
-- <code>AZahAA:I:90;YB</code>
-- <code>AZahAS:S:Done;YB</code>
-- <code>AZahAE:I:3;YB</code></p>
+  - <code>AZhaAD:S:U;YB</code>
+  - <code>AZahAA:I:90;YB</code>
+  - <code>AZahAS:S:Done;YB</code>
+  - <code>AZahAE:I:3;YB</code></p>
 <p>Where:
-- <code>AZ</code> = prefix
-- <code>Sender</code> = subsystem sending the message
-- <code>Receiver</code> = subsystem receiving the message
-- <code>Message Data</code> = token-based payload defined below
-- <code>YB</code> = suffix</p>
+  - <code>AZ</code> = prefix
+  - <code>Sender</code> = subsystem sending the message
+  - <code>Receiver</code> = subsystem receiving the message
+  - <code>Message Data</code> = token-based payload defined below
+  - <code>YB</code> = suffix</p>
 <h2 id="messages-received">Messages Received</h2>
 <h3 id="message-arm-drive-mode">Message: Arm Drive Mode</h3>
 <p>Sent from HMI ('h') to Front Arm ('a') to command arm movement.</p>
 <p>Format:
-<code>AD:S:U</code>
-<code>AD:S:D</code>
-<code>AD:S:R</code>
-<code>AD:S:L</code></p>
+  <code>AD:S:U</code>
+  <code>AD:S:D</code>
+  <code>AD:S:R</code>
+  <code>AD:S:L</code></p>
 <table>
 <thead>
 <tr>
@@ -1439,12 +1439,12 @@ If a message is addressed to this subsystem, it is processed.</p>
 </table>
 <p>Total Message Data Length: 6 bytes</p>
 <p>Example:
-- <code>AD:S:U</code></p>
+  - <code>AD:S:U</code></p>
 <p>Interpretation:
-- <code>U</code> = Up
-- <code>D</code> = Down
-- <code>R</code> = Right
-- <code>L</code> = Left</p>
+  - <code>U</code> = Up
+  - <code>D</code> = Down
+  - <code>R</code> = Right
+  - <code>L</code> = Left</p>
 <h2 id="messages-sent">Messages Sent</h2>
 <h3 id="message-arm-position-acknowledge">Message: Arm Position Acknowledge</h3>
 <p>Sent from Front Arm ('a') to HMI ('h') after movement is received or completed.</p>
@@ -1512,16 +1512,16 @@ If a message is addressed to this subsystem, it is processed.</p>
 </table>
 <p>Total Message Data Length: 8 bytes max</p>
 <p>Examples:
-- <code>AA:I:90</code>
-- <code>AA:I:-45</code>
-- <code>AA:I:180</code></p>
+  - <code>AA:I:90</code>
+  - <code>AA:I:-45</code>
+  - <code>AA:I:180</code></p>
 <h3 id="message-arm-status">Message: Arm Status</h3>
 <p>Sent from Front Arm ('a') to HMI ('h') to report current arm state.</p>
 <p>Format:
-<code>AS:S:Idle</code>
-<code>AS:S:Moving</code>
-<code>AS:S:Done</code>
-<code>AS:S:Halted</code></p>
+  <code>AS:S:Idle</code>
+  <code>AS:S:Moving</code>
+  <code>AS:S:Done</code>
+  <code>AS:S:Halted</code></p>
 <table>
 <thead>
 <tr>
@@ -1584,17 +1584,17 @@ If a message is addressed to this subsystem, it is processed.</p>
 </table>
 <p>Total Message Data Length: 12 bytes max</p>
 <p>Examples:
-- <code>AS:S:Idle</code>
-- <code>AS:S:Moving</code>
-- <code>AS:S:Done</code>
-- <code>AS:S:Halted</code></p>
+  - <code>AS:S:Idle</code>
+  - <code>AS:S:Moving</code>
+  - <code>AS:S:Done</code>
+  - <code>AS:S:Halted</code></p>
 <h3 id="message-arm-error">Message: Arm Error</h3>
 <p>Sent from Front Arm ('a') to HMI ('h') when a fault occurs.</p>
 <p>Format:
-<code>AE:I:0</code>
-<code>AE:I:1</code>
-<code>AE:I:2</code>
-<code>AE:I:3</code></p>
+  <code>AE:I:0</code>
+  <code>AE:I:1</code>
+  <code>AE:I:2</code>
+  <code>AE:I:3</code></p>
 <table>
 <thead>
 <tr>
@@ -1657,39 +1657,39 @@ If a message is addressed to this subsystem, it is processed.</p>
 </table>
 <p>Total Message Data Length: 6 bytes</p>
 <p>Error Codes:
-- <code>0</code> = No error
-- <code>1</code> = Stall
-- <code>2</code> = Overcurrent
-- <code>3</code> = Collision halt</p>
+  - <code>0</code> = No error
+  - <code>1</code> = Stall
+  - <code>2</code> = Overcurrent
+  - <code>3</code> = Collision halt</p>
 <p>Examples:
-- <code>AE:I:0</code>
-- <code>AE:I:1</code>
-- <code>AE:I:2</code>
-- <code>AE:I:3</code></p>
+  - <code>AE:I:0</code>
+  - <code>AE:I:1</code>
+  - <code>AE:I:2</code>
+  - <code>AE:I:3</code></p>
 <h2 id="receiver-behavior">Receiver Behavior</h2>
 <p>The Front Arm subsystem:
-- receives all UART packets from the daisy chain
-- checks for valid prefix and suffix framing
-- ignores malformed packets
-- ignores unsupported messages
-- forwards packets not addressed to this board
-- processes packets addressed to this board
-- discards packets sent by itself if they loop back
-- sends an acknowledgement for each valid supported command</p>
+  - receives all UART packets from the daisy chain
+  - checks for valid prefix and suffix framing
+  - ignores malformed packets
+  - ignores unsupported messages
+  - forwards packets not addressed to this board
+  - processes packets addressed to this board
+  - discards packets sent by itself if they loop back
+  - sends an acknowledgement for each valid supported command</p>
 <h2 id="sender-behavior">Sender Behavior</h2>
 <p>The Front Arm subsystem:
-- sends <code>AA:</code> after processing or completing a movement command
-- sends <code>AS:</code> during or after movement to report current state
-- sends <code>AE:</code> if a fault occurs
-- limits send rate using timer-based non-blocking logic
-- prioritizes forwarding incoming packets before sending its own messages</p>
+  - sends <code>AA:</code> after processing or completing a movement command
+  - sends <code>AS:</code> during or after movement to report current state
+  - sends <code>AE:</code> if a fault occurs
+  - limits send rate using timer-based non-blocking logic
+  - prioritizes forwarding incoming packets before sending its own messages</p>
 <h2 id="supported-message-flow">Supported Message Flow</h2>
 <p>Example command flow:
-1. HMI sends <code>AZhaAD:S:R;YB</code>
-2. Front Arm receives and processes the command
-3. Front Arm responds with position acknowledgement such as <code>AZahAA:I:90;YB</code>
-4. Front Arm reports status such as <code>AZahAS:S:Done;YB</code>
-5. If a fault occurs, Front Arm sends an error such as <code>AZahAE:I:3;YB</code></p>
+  1. HMI sends <code>AZhaAD:S:R;YB</code>
+  2. Front Arm receives and processes the command
+  3. Front Arm responds with position acknowledgement such as <code>AZahAA:I:90;YB</code>
+  4. Front Arm reports status such as <code>AZahAS:S:Done;YB</code>
+  5. If a fault occurs, Front Arm sends an error such as <code>AZahAE:I:3;YB</code></p>
 <h2 id="software-link">Software Link</h2>
 <p>(Will update later)
 - <a href="./front_arm_api_code.zip">ZIP of source code</a>
