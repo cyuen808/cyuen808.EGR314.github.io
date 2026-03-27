@@ -874,6 +874,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#message-framing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Framing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#messages-received" class="md-nav__link">
     <span class="md-ellipsis">
       Messages Received
@@ -884,27 +893,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#message-set_position" class="md-nav__link">
+  <a href="#message-arm-drive-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      Message: SET_POSITION
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#message-jog_enable" class="md-nav__link">
-    <span class="md-ellipsis">
-      Message: JOG_ENABLE
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#message-collision_status" class="md-nav__link">
-    <span class="md-ellipsis">
-      Message: COLLISION_STATUS
+      Message: Arm Drive Mode
     </span>
   </a>
   
@@ -926,27 +917,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#message-ack_position" class="md-nav__link">
+  <a href="#message-arm-position-acknowledge" class="md-nav__link">
     <span class="md-ellipsis">
-      Message: ACK_POSITION
+      Message: Arm Position Acknowledge
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#message-arm_status" class="md-nav__link">
+  <a href="#message-arm-status" class="md-nav__link">
     <span class="md-ellipsis">
-      Message: ARM_STATUS
+      Message: Arm Status
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#message-arm_error" class="md-nav__link">
+  <a href="#message-arm-error" class="md-nav__link">
     <span class="md-ellipsis">
-      Message: ARM_ERROR
+      Message: Arm Error
     </span>
   </a>
   
@@ -970,6 +961,15 @@
   <a href="#sender-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       Sender Behavior
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-message-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Message Flow
     </span>
   </a>
   
@@ -1163,6 +1163,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#message-framing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Framing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#messages-received" class="md-nav__link">
     <span class="md-ellipsis">
       Messages Received
@@ -1173,27 +1182,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#message-set_position" class="md-nav__link">
+  <a href="#message-arm-drive-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      Message: SET_POSITION
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#message-jog_enable" class="md-nav__link">
-    <span class="md-ellipsis">
-      Message: JOG_ENABLE
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#message-collision_status" class="md-nav__link">
-    <span class="md-ellipsis">
-      Message: COLLISION_STATUS
+      Message: Arm Drive Mode
     </span>
   </a>
   
@@ -1215,27 +1206,27 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#message-ack_position" class="md-nav__link">
+  <a href="#message-arm-position-acknowledge" class="md-nav__link">
     <span class="md-ellipsis">
-      Message: ACK_POSITION
+      Message: Arm Position Acknowledge
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#message-arm_status" class="md-nav__link">
+  <a href="#message-arm-status" class="md-nav__link">
     <span class="md-ellipsis">
-      Message: ARM_STATUS
+      Message: Arm Status
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#message-arm_error" class="md-nav__link">
+  <a href="#message-arm-error" class="md-nav__link">
     <span class="md-ellipsis">
-      Message: ARM_ERROR
+      Message: Arm Error
     </span>
   </a>
   
@@ -1259,6 +1250,15 @@
   <a href="#sender-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       Sender Behavior
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-message-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Message Flow
     </span>
   </a>
   
@@ -1299,11 +1299,11 @@
   <h1>API</h1>
 
 <h2 id="overview">Overview</h2>
-<p>This page defines the UART message interface for Caleb’s Front Arm subsystem. The Front Arm subsystem receives commands from the HMI or wireless subsystem, executes motion commands for the arm base, and returns acknowledgements and status messages to the team network.</p>
-<p>This API only defines the message data field inside the class packet. Prefix, suffix, sender ID, and receiver ID are handled by the class UART packet format.</p>
+<p>This page defines the UART message interface for Caleb’s Front Arm subsystem. The Front Arm subsystem receives commands from the HMI, executes motion commands for the arm base, and returns acknowledgements, status messages, and error messages to the team network.</p>
+<p>This API defines the message data portion used inside the class UART packet. Prefix, suffix, sender ID, and receiver ID are handled by the class communication protocol.</p>
 <h2 id="subsystem-id">Subsystem ID</h2>
 <ul>
-<li>Front Arm Board ID: a   <!-- replace with your actual ID --></li>
+<li>Front Arm Board ID: 'a'</li>
 </ul>
 <h2 id="subsystem-addressing">Subsystem Addressing</h2>
 <p>All subsystems communicate using ASCII character IDs.</p>
@@ -1335,7 +1335,7 @@ If a message is addressed to this subsystem, it is processed.</p>
 </tr>
 <tr>
 <td>Pressure</td>
-<td>'P'</td>
+<td>'p'</td>
 </tr>
 <tr>
 <td>Arm</td>
@@ -1349,11 +1349,34 @@ If a message is addressed to this subsystem, it is processed.</p>
 <td>Temp</td>
 <td>'t'</td>
 </tr>
+<tr>
+<td>Broadcast</td>
+<td>'X'</td>
+</tr>
 </tbody>
 </table>
+<h2 id="message-framing">Message Framing</h2>
+<p>All messages are transmitted using the class UART frame:</p>
+<p><code>AZ [Sender] [Receiver] [Message Data] YB</code></p>
+<p>Examples:
+- <code>AZhaAD:S:U;YB</code>
+- <code>AZahAA:I:90;YB</code>
+- <code>AZahAS:S:Done;YB</code>
+- <code>AZahAE:I:3;YB</code></p>
+<p>Where:
+- <code>AZ</code> = prefix
+- <code>Sender</code> = subsystem sending the message
+- <code>Receiver</code> = subsystem receiving the message
+- <code>Message Data</code> = token-based payload defined below
+- <code>YB</code> = suffix</p>
 <h2 id="messages-received">Messages Received</h2>
-<h3 id="message-set_position">Message: SET_POSITION</h3>
-<p>Sent from HMI ('h') to Front Arm ('a') to command arm rotation.</p>
+<h3 id="message-arm-drive-mode">Message: Arm Drive Mode</h3>
+<p>Sent from HMI ('h') to Front Arm ('a') to command arm movement.</p>
+<p>Format:
+<code>AD:S:U</code>
+<code>AD:S:D</code>
+<code>AD:S:R</code>
+<code>AD:S:L</code></p>
 <table>
 <thead>
 <tr>
@@ -1368,100 +1391,65 @@ If a message is addressed to this subsystem, it is processed.</p>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>message_type</td>
-<td>uint8_t</td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td>Message ID for SET_POSITION</td>
+<td>1-2</td>
+<td>token</td>
+<td>char[2]</td>
+<td>2</td>
+<td>AD</td>
+<td>AD</td>
+<td>Message token</td>
 </tr>
 <tr>
-<td>2</td>
-<td>angle_deg</td>
-<td>int16_t</td>
-<td>2</td>
-<td>-180</td>
-<td>180</td>
-<td>Desired arm angle in degrees</td>
+<td>3</td>
+<td>separator_1</td>
+<td>char</td>
+<td>1</td>
+<td>:</td>
+<td>:</td>
+<td>Separator</td>
+</tr>
+<tr>
+<td>4</td>
+<td>type</td>
+<td>char</td>
+<td>1</td>
+<td>S</td>
+<td>S</td>
+<td>String type</td>
+</tr>
+<tr>
+<td>5</td>
+<td>separator_2</td>
+<td>char</td>
+<td>1</td>
+<td>:</td>
+<td>:</td>
+<td>Separator</td>
+</tr>
+<tr>
+<td>6</td>
+<td>command</td>
+<td>char</td>
+<td>1</td>
+<td>D</td>
+<td>U</td>
+<td>Arm direction command: U, D, R, or L</td>
 </tr>
 </tbody>
 </table>
+<p>Total Message Data Length: 6 bytes</p>
 <p>Example:
-- angle_deg = 90</p>
-<h3 id="message-jog_enable">Message: JOG_ENABLE</h3>
-<p>Used to enable or stop jog motion.</p>
-<table>
-<thead>
-<tr>
-<th>Byte</th>
-<th>Variable Name</th>
-<th>Data Type</th>
-<th>Bytes</th>
-<th>Min</th>
-<th>Max</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>message_type</td>
-<td>uint8_t</td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td>Message ID for JOG_ENABLE</td>
-</tr>
-<tr>
-<td>2</td>
-<td>enable</td>
-<td>uint8_t</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1 = move, 0 = stop</td>
-</tr>
-</tbody>
-</table>
-<h3 id="message-collision_status">Message: COLLISION_STATUS</h3>
-<p>Sent from Pressure ('P') to indicate safe or collision.</p>
-<table>
-<thead>
-<tr>
-<th>Byte</th>
-<th>Variable Name</th>
-<th>Data Type</th>
-<th>Bytes</th>
-<th>Min</th>
-<th>Max</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>message_type</td>
-<td>uint8_t</td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td>Message ID for COLLISION_STATUS</td>
-</tr>
-<tr>
-<td>2</td>
-<td>safe_flag</td>
-<td>uint8_t</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-<td>1 = safe to continue, 0 = halt</td>
-</tr>
-</tbody>
-</table>
+- <code>AD:S:U</code></p>
+<p>Interpretation:
+- <code>U</code> = Up
+- <code>D</code> = Down
+- <code>R</code> = Right
+- <code>L</code> = Left</p>
 <h2 id="messages-sent">Messages Sent</h2>
-<h3 id="message-ack_position">Message: ACK_POSITION</h3>
-<p>Sent from Front Arm ('a') to HMI ('h') after movement.</p>
+<h3 id="message-arm-position-acknowledge">Message: Arm Position Acknowledge</h3>
+<p>Sent from Front Arm ('a') to HMI ('h') after movement is received or completed.</p>
+<p>Format:
+<code>AA:I:90</code></p>
 <table>
 <thead>
 <tr>
@@ -1476,27 +1464,64 @@ If a message is addressed to this subsystem, it is processed.</p>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>message_type</td>
-<td>uint8_t</td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td>Message ID for ACK_POSITION</td>
+<td>1-2</td>
+<td>token</td>
+<td>char[2]</td>
+<td>2</td>
+<td>AA</td>
+<td>AA</td>
+<td>Message token</td>
 </tr>
 <tr>
-<td>2</td>
-<td>actual_angle_deg</td>
-<td>int16_t</td>
-<td>2</td>
+<td>3</td>
+<td>separator_1</td>
+<td>char</td>
+<td>1</td>
+<td>:</td>
+<td>:</td>
+<td>Separator</td>
+</tr>
+<tr>
+<td>4</td>
+<td>type</td>
+<td>char</td>
+<td>1</td>
+<td>I</td>
+<td>I</td>
+<td>Integer type</td>
+</tr>
+<tr>
+<td>5</td>
+<td>separator_2</td>
+<td>char</td>
+<td>1</td>
+<td>:</td>
+<td>:</td>
+<td>Separator</td>
+</tr>
+<tr>
+<td>6-8</td>
+<td>position_value</td>
+<td>ASCII integer</td>
+<td>up to 3</td>
 <td>-180</td>
 <td>180</td>
-<td>Final measured or commanded position</td>
+<td>Arm position acknowledgement value</td>
 </tr>
 </tbody>
 </table>
-<h3 id="message-arm_status">Message: ARM_STATUS</h3>
-<p>Reports current arm state.</p>
+<p>Total Message Data Length: 8 bytes max</p>
+<p>Examples:
+- <code>AA:I:90</code>
+- <code>AA:I:-45</code>
+- <code>AA:I:180</code></p>
+<h3 id="message-arm-status">Message: Arm Status</h3>
+<p>Sent from Front Arm ('a') to HMI ('h') to report current arm state.</p>
+<p>Format:
+<code>AS:S:Idle</code>
+<code>AS:S:Moving</code>
+<code>AS:S:Done</code>
+<code>AS:S:Halted</code></p>
 <table>
 <thead>
 <tr>
@@ -1511,82 +1536,164 @@ If a message is addressed to this subsystem, it is processed.</p>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>message_type</td>
-<td>uint8_t</td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td>Message ID for ARM_STATUS</td>
+<td>1-2</td>
+<td>token</td>
+<td>char[2]</td>
+<td>2</td>
+<td>AS</td>
+<td>AS</td>
+<td>Message token</td>
 </tr>
 <tr>
+<td>3</td>
+<td>separator_1</td>
+<td>char</td>
+<td>1</td>
+<td>:</td>
+<td>:</td>
+<td>Separator</td>
+</tr>
+<tr>
+<td>4</td>
+<td>type</td>
+<td>char</td>
+<td>1</td>
+<td>S</td>
+<td>S</td>
+<td>String type</td>
+</tr>
+<tr>
+<td>5</td>
+<td>separator_2</td>
+<td>char</td>
+<td>1</td>
+<td>:</td>
+<td>:</td>
+<td>Separator</td>
+</tr>
+<tr>
+<td>6-12</td>
+<td>status_text</td>
+<td>string</td>
+<td>up to 7</td>
+<td>Idle</td>
+<td>Halted</td>
+<td>Current arm state</td>
+</tr>
+</tbody>
+</table>
+<p>Total Message Data Length: 12 bytes max</p>
+<p>Examples:
+- <code>AS:S:Idle</code>
+- <code>AS:S:Moving</code>
+- <code>AS:S:Done</code>
+- <code>AS:S:Halted</code></p>
+<h3 id="message-arm-error">Message: Arm Error</h3>
+<p>Sent from Front Arm ('a') to HMI ('h') when a fault occurs.</p>
+<p>Format:
+<code>AE:I:0</code>
+<code>AE:I:1</code>
+<code>AE:I:2</code>
+<code>AE:I:3</code></p>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Variable Name</th>
+<th>Data Type</th>
+<th>Bytes</th>
+<th>Min</th>
+<th>Max</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>token</td>
+<td>char[2]</td>
 <td>2</td>
-<td>status_code</td>
-<td>uint8_t</td>
+<td>AE</td>
+<td>AE</td>
+<td>Message token</td>
+</tr>
+<tr>
+<td>3</td>
+<td>separator_1</td>
+<td>char</td>
+<td>1</td>
+<td>:</td>
+<td>:</td>
+<td>Separator</td>
+</tr>
+<tr>
+<td>4</td>
+<td>type</td>
+<td>char</td>
+<td>1</td>
+<td>I</td>
+<td>I</td>
+<td>Integer type</td>
+</tr>
+<tr>
+<td>5</td>
+<td>separator_2</td>
+<td>char</td>
+<td>1</td>
+<td>:</td>
+<td>:</td>
+<td>Separator</td>
+</tr>
+<tr>
+<td>6</td>
+<td>error_code</td>
+<td>ASCII integer</td>
 <td>1</td>
 <td>0</td>
 <td>3</td>
-<td>0 = idle, 1 = moving, 2 = done, 3 = halted</td>
+<td>Error code</td>
 </tr>
 </tbody>
 </table>
-<h3 id="message-arm_error">Message: ARM_ERROR</h3>
-<p>Reports arm faults.</p>
-<table>
-<thead>
-<tr>
-<th>Byte</th>
-<th>Variable Name</th>
-<th>Data Type</th>
-<th>Bytes</th>
-<th>Min</th>
-<th>Max</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>message_type</td>
-<td>uint8_t</td>
-<td>1</td>
-<td>0</td>
-<td>255</td>
-<td>Message ID for ARM_ERROR</td>
-</tr>
-<tr>
-<td>2</td>
-<td>error_code</td>
-<td>uint8_t</td>
-<td>1</td>
-<td>0</td>
-<td>10</td>
-<td>0 = none, 1 = stall, 2 = overcurrent, 3 = collision halt</td>
-</tr>
-</tbody>
-</table>
+<p>Total Message Data Length: 6 bytes</p>
+<p>Error Codes:
+- <code>0</code> = No error
+- <code>1</code> = Stall
+- <code>2</code> = Overcurrent
+- <code>3</code> = Collision halt</p>
+<p>Examples:
+- <code>AE:I:0</code>
+- <code>AE:I:1</code>
+- <code>AE:I:2</code>
+- <code>AE:I:3</code></p>
 <h2 id="receiver-behavior">Receiver Behavior</h2>
 <p>The Front Arm subsystem:
 - receives all UART packets from the daisy chain
-- ignores bytes outside a valid frame
+- checks for valid prefix and suffix framing
 - ignores malformed packets
-- ignores packets larger than the buffer
+- ignores unsupported messages
 - forwards packets not addressed to this board
 - processes packets addressed to this board
 - discards packets sent by itself if they loop back
 - sends an acknowledgement for each valid supported command</p>
 <h2 id="sender-behavior">Sender Behavior</h2>
 <p>The Front Arm subsystem:
-- sends ACK_POSITION after motion completes
-- sends ARM_STATUS during or after motion
-- sends ARM_ERROR if a fault occurs
-- limits send rate using a timer-based non-blocking interval
-- prioritizes forwarding incoming messages before sending its own</p>
+- sends <code>AA:</code> after processing or completing a movement command
+- sends <code>AS:</code> during or after movement to report current state
+- sends <code>AE:</code> if a fault occurs
+- limits send rate using timer-based non-blocking logic
+- prioritizes forwarding incoming packets before sending its own messages</p>
+<h2 id="supported-message-flow">Supported Message Flow</h2>
+<p>Example command flow:
+1. HMI sends <code>AZhaAD:S:R;YB</code>
+2. Front Arm receives and processes the command
+3. Front Arm responds with position acknowledgement such as <code>AZahAA:I:90;YB</code>
+4. Front Arm reports status such as <code>AZahAS:S:Done;YB</code>
+5. If a fault occurs, Front Arm sends an error such as <code>AZahAE:I:3;YB</code></p>
 <h2 id="software-link">Software Link</h2>
-<ul>
-<li><a href="./front_arm_api_code.zip">ZIP of source code</a></li>
-<li><a href="./">Main repository</a></li>
-</ul>
+<p>(Will update later)
+- <a href="./front_arm_api_code.zip">ZIP of source code</a>
+- <a href="./">Main repository</a></p>
 
 
 
