@@ -41,7 +41,7 @@ If a message is addressed to this subsystem, it is processed.
 
 ### Examples:
 - `AZhaAD:S:U;YB`
-- `AZahAA:I:90;YB`
+- `AZahAA:IL:90;YB`
 - `AZahAS:S:Done;YB`
 - `AZahAE:I:3;YB`
 
@@ -88,22 +88,25 @@ Total Message Data Length: 6 bytes
 Sent from Front Arm ('a') to HMI ('h') after movement is received or completed.
 
 ### Format:
-- `AA:I:90`
+- `AA:IL:90`
 
 | Byte | Variable Name | Data Type | Bytes | Min | Max | Description |
 |------|---------------|-----------|-------|-----|-----|-------------|
 | 1-2 | token | char[2] | 2 | AA | AA | Message token |
 | 3 | separator_1 | char | 1 | : | : | Separator |
-| 4 | type | char | 1 | I | I | Integer type |
-| 5 | separator_2 | char | 1 | : | : | Separator |
-| 6-8 | position_value | ASCII integer | up to 3 | -180 | 180 | Arm position acknowledgement value |
+| 4-5 | type | char[2] | 2 | IL | IL | 16-bit integer type |
+| 6 | separator_2 | char | 1 | : | : | Separator |
+| 7-10 | position_value | ASCII int16 value | up to 4 | -180 | 180 | Arm position acknowledgement value |
 
-Total Message Data Length: 8 bytes max
+Total Message Data Length: 10 bytes max
 
 ### Examples:
-- `AA:I:90`
-- `AA:I:-45`
-- `AA:I:180`
+- `AA:IL:90`
+- `AA:IL:-45`
+- `AA:IL:180`
+
+### Note:
+- `IL` is used for int16-style values so the arm position can safely represent the range `-180` to `180`.
 
 ## Message: Arm Status
 Sent from Front Arm ('a') to HMI ('h') to report current arm state.
@@ -133,7 +136,7 @@ Total Message Data Length: 12 bytes max
 ## Message: Arm Error
 Sent from Front Arm ('a') to HMI ('h') when a fault occurs.
 
-###Format:
+### Format:
 - `AE:I:0`
 - `AE:I:1`
 - `AE:I:2`
@@ -184,7 +187,7 @@ Total Message Data Length: 6 bytes
 ### Example command flow:
 1. HMI sends `AZhaAD:S:R;YB`
 2. Front Arm receives and processes the command
-3. Front Arm responds with position acknowledgement such as `AZahAA:I:90;YB`
+3. Front Arm responds with position acknowledgement such as `AZahAA:IL:90;YB`
 4. Front Arm reports status such as `AZahAS:S:Done;YB`
 5. If a fault occurs, Front Arm sends an error such as `AZahAE:I:3;YB`
 
