@@ -1018,6 +1018,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note:
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1502,6 +1511,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note:
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1755,7 +1773,7 @@ If a message is addressed to this subsystem, it is processed.</p>
 <h3 id="examples">Examples:</h3>
 <ul>
 <li><code>AZhaAD:S:U;YB</code></li>
-<li><code>AZahAA:I:90;YB</code></li>
+<li><code>AZahAA:IL:90;YB</code></li>
 <li><code>AZahAS:S:Done;YB</code></li>
 <li><code>AZahAE:I:3;YB</code></li>
 </ul>
@@ -1854,7 +1872,7 @@ If a message is addressed to this subsystem, it is processed.</p>
 <p>Sent from Front Arm ('a') to HMI ('h') after movement is received or completed.</p>
 <h3 id="format_1">Format:</h3>
 <ul>
-<li><code>AA:I:90</code></li>
+<li><code>AA:IL:90</code></li>
 </ul>
 <table>
 <thead>
@@ -1888,16 +1906,16 @@ If a message is addressed to this subsystem, it is processed.</p>
 <td>Separator</td>
 </tr>
 <tr>
-<td>4</td>
+<td>4-5</td>
 <td>type</td>
-<td>char</td>
-<td>1</td>
-<td>I</td>
-<td>I</td>
-<td>Integer type</td>
+<td>char[2]</td>
+<td>2</td>
+<td>IL</td>
+<td>IL</td>
+<td>16-bit integer type</td>
 </tr>
 <tr>
-<td>5</td>
+<td>6</td>
 <td>separator_2</td>
 <td>char</td>
 <td>1</td>
@@ -1906,22 +1924,26 @@ If a message is addressed to this subsystem, it is processed.</p>
 <td>Separator</td>
 </tr>
 <tr>
-<td>6-8</td>
+<td>7-10</td>
 <td>position_value</td>
-<td>ASCII integer</td>
-<td>up to 3</td>
+<td>ASCII int16 value</td>
+<td>up to 4</td>
 <td>-180</td>
 <td>180</td>
 <td>Arm position acknowledgement value</td>
 </tr>
 </tbody>
 </table>
-<p>Total Message Data Length: 8 bytes max</p>
+<p>Total Message Data Length: 10 bytes max</p>
 <h3 id="examples_1">Examples:</h3>
 <ul>
-<li><code>AA:I:90</code></li>
-<li><code>AA:I:-45</code></li>
-<li><code>AA:I:180</code></li>
+<li><code>AA:IL:90</code></li>
+<li><code>AA:IL:-45</code></li>
+<li><code>AA:IL:180</code></li>
+</ul>
+<h3 id="note">Note:</h3>
+<ul>
+<li><code>IL</code> is used for int16-style values so the arm position can safely represent the range <code>-180</code> to <code>180</code>.</li>
 </ul>
 <h2 id="message-arm-status">Message: Arm Status</h2>
 <p>Sent from Front Arm ('a') to HMI ('h') to report current arm state.</p>
@@ -2110,7 +2132,7 @@ If a message is addressed to this subsystem, it is processed.</p>
 <ol>
 <li>HMI sends <code>AZhaAD:S:R;YB</code></li>
 <li>Front Arm receives and processes the command</li>
-<li>Front Arm responds with position acknowledgement such as <code>AZahAA:I:90;YB</code></li>
+<li>Front Arm responds with position acknowledgement such as <code>AZahAA:IL:90;YB</code></li>
 <li>Front Arm reports status such as <code>AZahAS:S:Done;YB</code></li>
 <li>If a fault occurs, Front Arm sends an error such as <code>AZahAE:I:3;YB</code></li>
 </ol>
