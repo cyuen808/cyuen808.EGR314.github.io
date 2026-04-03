@@ -13,7 +13,7 @@ This power budget verifies that the selected regulators and battery source can s
 - **DRV8434S** as the stepper motor driver
 - **LM22678** as the 5 V buck regulator
 - **LM2651** as the 3.3 V regulator
-- **+12V Li-ion battery pack** as the main source 
+- **10.8 V Li-ion battery pack** as the main source
 
 ---
 
@@ -23,7 +23,7 @@ This power budget verifies that the selected regulators and battery source can s
 |---|---:|---:|
 | ESP32-S3-WROOM-1 | 3.3 V | 0.50 A *(budgeted peak)* |
 | DRV8434S logic / control | 3.3 V | 0.01 A *(budgeted)* |
-| DRV8434S + Stepper Motor (VM rail) | +12 V | 2.50 A |
+| DRV8434S + Stepper Motor (VM rail) | +10.8 V | 2.50 A |
 | 5 V auxiliary rail load | 5 V | 0.50 A *(estimated input to 3.3 V stage)* |
 
 ---
@@ -39,7 +39,7 @@ With 25% margin:
 `0.51 × 1.25 = 0.638 A`
 
 Selected regulator: **LM2651**  
-Maximum output current: **1.5 A** 
+Maximum output current: **1.5 A**
 
 ---
 
@@ -54,10 +54,11 @@ With 25% margin:
 `0.50 × 1.25 = 0.625 A`
 
 Selected regulator: **LM22678**  
-Maximum output current: **5 A** 
+Maximum output current: **5 A**
+
 ---
 
-### 14.4 V Motor Rail
+### 10.8 V Motor Rail
 
 Motor / VM rail current:  
 `2.50 A`
@@ -65,8 +66,8 @@ Motor / VM rail current:
 With 25% margin:  
 `2.50 × 1.25 = 3.125 A`
 
-Power source: **12 V Li-ion battery pack**  
-Maximum continuous discharge current: **5.0 A** 
+Power source: **10.8 V Li-ion battery pack**  
+Maximum continuous discharge current: **8.0 A**
 
 ---
 
@@ -76,7 +77,7 @@ Maximum continuous discharge current: **5.0 A**
 |---|---|---:|---:|---|
 | 3.3 V | LM2651 | 1.5 A | 0.638 A | ✔ Safe |
 | 5 V | LM22678 | 5.0 A | 0.625 A | ✔ Safe |
-| 12 V Motor Rail | 4S Li-ion Battery Pack | 5.0 A continuous | 3.125 A | ✔ Safe |
+| 10.8 V Motor Rail | 3S2P Li-ion Battery Pack | 8.0 A continuous | 3.125 A | ✔ Safe |
 
 ---
 
