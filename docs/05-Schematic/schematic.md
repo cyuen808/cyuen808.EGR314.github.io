@@ -37,7 +37,7 @@ This schematic ensures clean power distribution, safe current limiting for the N
 - LM22678 5V Buck Regulator for Servos
 - LM2651 3.3V Buck Regulator for ESP32 & Logic
 - Proper decoupling, filtering, and PWR_FLAG validation
-- Fuse (F1) on the +14V rail before feeding the rest of the board
+- Fuse (F1) on the +12V rail before feeding the rest of the board
 
 #### Stepper Motor Control
 - DRV8434S Stepper Driver

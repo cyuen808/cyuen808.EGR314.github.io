@@ -13,7 +13,7 @@ This power budget verifies that the selected regulators and battery source can s
 - **DRV8434S** as the stepper motor driver
 - **LM22678** as the 5 V buck regulator
 - **LM2651** as the 3.3 V regulator
-- **+12 V Li-ion battery pack** as the main source 
+- **+12V Li-ion battery pack** as the main source 
 
 ---
 
@@ -90,9 +90,9 @@ Battery specifications:
 - **5.0 A maximum continuous discharge current** 
 
 ### Power Budget 
-![Power Budget] (ADD.png)
+![Power Budget](Front-Arm-Subsystem-PowerBudget.png){style width:"450" height:"400;"}
 
 ## Downloads
 
-- [Power Budget (.xlsx)](Excel.xlsx)  
-- [Power Budget (.pdf)](PDF.pdf) 
+- [Power Budget (.xlsx)](Front-Arm-Subsystem-PowerBudget.xlsx)  
+- [Power Budget (.pdf)](Front-Arm-Subsystem-PowerBudget.pdf) 
