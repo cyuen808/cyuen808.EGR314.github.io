@@ -82,7 +82,7 @@ The LM2651 is a high efficiency switching regulator that supports 4 V to 14 V in
 
 ### Battery Source
 
-The battery pack used for the project is a +12V lithium ion pack rated at 5000 mAh and 72 Wh. It has a maximum continuous discharge current of 5.0 A and uses a 4 pin Mini Fit Jr connector with power and SMBus lines.
+The battery pack used for the project is a 10.8 V lithium-ion pack rated at 10000 mAh and 108 Wh. It has a maximum continuous discharge current of 8.0 A and uses a 6-pin Mini-Fit Jr connector with duplicated power pins and SMBus communication lines.
 
 ---
 
