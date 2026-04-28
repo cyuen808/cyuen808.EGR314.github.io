@@ -26,7 +26,7 @@
 
     
       
-        <title>Reflection - EGR 314 Caleb Yuen Datasheet</title>
+        <title>Recommendation - EGR 314 Caleb Yuen Datasheet</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#review-of-modules-sucess" class="md-skip">
+        <a href="#reflection-recommendations-for-future-students" class="md-skip">
           Skip to content
         </a>
       
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reflection
+              Recommendation
             
           </span>
         </div>
@@ -1244,80 +1244,18 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Reflection
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Reflection
+    Recommendation
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#review-of-modules-sucess" class="md-nav__link">
-    <span class="md-ellipsis">
-      Review of Module's Sucess
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-20" class="md-nav__link">
-    <span class="md-ellipsis">
-      Version 2.0
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lessons-learned" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lessons Learned
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommendations-for-future-students" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recommendations for Future Students
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1404,50 +1342,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#review-of-modules-sucess" class="md-nav__link">
-    <span class="md-ellipsis">
-      Review of Module's Sucess
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#version-20" class="md-nav__link">
-    <span class="md-ellipsis">
-      Version 2.0
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lessons-learned" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lessons Learned
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommendations-for-future-students" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recommendations for Future Students
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1470,22 +1366,24 @@
   
 
 
-  <h1>Reflection</h1>
-
-<h2 id="review-of-modules-sucess">Review of Module's Sucess</h2>
-<p>dfgh</p>
-<h2 id="version-20">Version 2.0</h2>
-<p>dfghj</p>
-<h2 id="lessons-learned">Lessons Learned</h2>
+<h1 id="reflection-recommendations-for-future-students">Reflection: Recommendations for Future Students</h1>
+<p>The following five recommendations are the things I most wish I had known or done earlier in the semester. They are aimed at the student version of me on day one of EGR 314.</p>
 <ol>
-<li>ghj</li>
-<li>ghds</li>
-</ol>
-<h2 id="recommendations-for-future-students">Recommendations for Future Students</h2>
-<ol>
-<li>sfev</li>
-<li>sfvvf</li>
-<li></li>
+<li>
+<p><strong>Read the datasheet for every major component all the way through before you commit to it on the schematic</strong>, paying particular attention to the absolute maximum ratings table, the recommended operating conditions, the boot or strapping pin behavior, and the typical application circuit, because these four sections are where almost every silent design mistake originates.</p>
+</li>
+<li>
+<p><strong>Begin your PCB layout the same week you finish schematic capture, even if you expect minor schematic changes</strong>, because routing the power plane, placing decoupling, respecting antenna keepouts, and adding thermal vias under QFN packages will consistently take more time than you predict and are nearly impossible to fix the night before a manufacturing deadline.</p>
+</li>
+<li>
+<p><strong>Add at least one test point on every rail, every SPI line, every UART line, and every fault output, and label each one clearly on the silkscreen</strong>, since test points cost almost nothing in BOM or board area but are the single biggest factor in whether you can debug a problem in minutes instead of hours when something does not work the first time you power up.</p>
+</li>
+<li>
+<p><strong>Lock down your subsystem's API and message format with your team as early in the semester as possible and treat the API document as a contract</strong>, so that you can develop and test your firmware against the spec rather than waiting for other subsystems to be ready, which prevents the entire team from collapsing into a single integration crunch in the final two weeks.</p>
+</li>
+<li>
+<p><strong>Practice surface-mount soldering on cheap breakout boards before your real PCB arrives</strong>, especially QFN and TSSOP packages with hidden thermal pads, because the first time you use solder paste, a stencil, and a hot-air station should not be on the only PCB you have for a graded assignment.</p>
+</li>
 </ol>
 
 
