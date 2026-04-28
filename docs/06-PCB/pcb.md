@@ -29,12 +29,12 @@ The PCB integrates the main hardware needed for the arm base rotation system, in
 *Figure 6.1 Final PCB layout render from the ECAD software.*
 
 ### PCB Top View
-![PCB top view](assets/pcb-top-view.png)
+![PCB top view](Front-Arm-Subsystem-PCB.top.jpg)
 
 *Figure 2. Manufactured PCB top side.*
 
 ### PCB Bottom View
-![PCB bottom view](assets/pcb-bottom-view.png)
+![PCB bottom view](Front-Arm-Subsystem-PCB.bottom.jpg)
 
 *Figure 3. Manufactured PCB bottom side.*
 
