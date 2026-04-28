@@ -1141,7 +1141,7 @@
 The subsystem is centered around an ESP32 microcontroller powered from a 3.3V switching regulator. It communicates with the rest of the system through a bidirectional UART daisy-chain connection using RX and TX lines routed through the 2x4 modular connector.</p>
 <p>The subsystem performs two primary actuation tasks:
 - Stepper motor control for base rotation using an SPI-controlled stepper motor driver<br>
-- Direct PWM control of three RC servos (shoulder, elbow, wrist)</p>
+- Direct PWM control of three RC servos (shoulder &amp; elbow)</p>
 <p>Separate regulated power domains are implemented for logic (3.3V), servo power (5V), and high-current motor power.
 A homing switch provides positional reference feedback through a GPIO input.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../FrontArmSubsystem.png" data-desc-position="bottom"><img alt="Front Arm Subsystem Block Diagram" src="../FrontArmSubsystem.png"></a></p>
@@ -1161,7 +1161,7 @@ A homing switch provides positional reference feedback through a GPIO input.</p>
 <li><strong>9V DC input</strong> via barrel jack for Individual testing </li>
 <li><strong>3.3V switching regulator</strong> for MCU and logic  </li>
 <li><strong>5V regulator</strong> for servo power  </li>
-<li><strong>+14V rail</strong> used directly by the stepper motor driver and supplying the team   </li>
+<li><strong>+12V rail</strong> used directly by the stepper motor driver and supplying the team   </li>
 </ul>
 <blockquote>
 <p><strong>Note:</strong> RC servos are included as stretch goals and are an instructor-approved exception to the standard EGR 314 actuator constraints.</p>
