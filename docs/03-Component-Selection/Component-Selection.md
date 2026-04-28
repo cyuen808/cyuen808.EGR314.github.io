@@ -247,12 +247,12 @@ The D2F-01 was selected because it provides reliable SPDT operation with a 30V D
 
 ---
 
-### Shoulder / Elbow / Wrist Choice
+### Shoulder / Elbow 
 
 **Selected Component:** CN0193  
 
 ### Rationale
-The CN0193 was selected for all three joints to ensure sufficient torque during lifting and digging operations. Using the same high-torque servo across the arm improves reliability, reduces the risk of stalling under load, and simplifies mechanical and electrical design.
+The CN0193 was selected for all two joints to ensure sufficient torque during lifting and digging operations. Using the same high-torque servo across the arm improves reliability, reduces the risk of stalling under load, and simplifies mechanical and electrical design.
 
 
 ## Stepper Motors
