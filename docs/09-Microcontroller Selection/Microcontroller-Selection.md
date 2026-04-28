@@ -10,8 +10,9 @@ tags:
 
 ## Overview
 
-The selected microcontroller for this subsystem is the **Microchip PIC18F47K42** (surface-mount version). This device was chosen to support UART communication for the team daisy chain network, SPI communication for the stepper motor driver, PWM outputs for servo control, and GPIO inputs for limit switch detection. The PIC18F47K42 provides sufficient hardware resources while maintaining compatibility with MPLAB X and MCC Melody.
+The selected microcontroller for this subsystem is the ESP32-S3-WROOM-1. This device was chosen to support UART communication for the team daisy chain network, SPI communication for the stepper motor driver, PWM outputs for servo control, and GPIO inputs for limit switch detection.
 
+The ESP32-S3 provides high performance, integrated wireless capabilities (Wi-Fi and Bluetooth), and extensive peripheral support, making it well-suited for this embedded robotics application.
 ---
 
 ## Project-Specific Resource Requirements
@@ -20,68 +21,63 @@ Based on the electrical block diagram, the following hardware resources are requ
 
 - **1x UART** – Daisy chain communication
 - **1x SPI peripheral** – Stepper motor driver control
-- **3x PWM outputs** – Shoulder, elbow, and wrist servos
+- **2x PWM outputs** – Shoulder & elbow
 - **1x Digital input (GPIO)** – Homing switch
-- **ICSP programming interface** – MPLAB Snap
+- **USB programming interface**
 - **Additional GPIO** – Fault input and debugging LEDs
 
-The PIC18F47K42 supports all of these peripherals simultaneously without resource conflicts.
+The ESP32-S3 supports all required peripherals simultaneously with no resource conflicts.
 
 ---
 
-## PIC18F47K42 Key Features Relevant to Design
+### Key Features
 
-- 3.3V operation (compatible with logic rail)
-- Multiple UART modules
-- Multiple SPI modules
-- Multiple CCP/PWM modules
-- Sufficient GPIO pins for subsystem control
-- Supported in MPLAB X with MCC Melody
-
-The device provides excess hardware resources beyond minimum requirements, allowing room for future expansion if necessary.
-
----
-
-## Peripheral Compatibility Check
-
-### Stepper Motor Driver (DRV8434SRGER)
-- SPI-compatible
-- Accepts 3.3V logic signals from PIC
-- STEP/DIR and control signals supported
-
-### Servos (CN0193 & Adafruit 2307)
-- Controlled via PWM
-- Operate from 5V rail
-- PWM signals generated directly from PIC
-
-### Homing Switch (D2F-01)
-- Connected to GPIO input
-- Uses pull-up configuration
-- Logic-level detection (3.3V safe)
-
-No known hardware conflicts exist between the PIC and selected peripherals.
+- 3.3V logic operation  
+- Multiple UART, SPI, and I2C peripherals  
+- LEDC hardware PWM (ideal for servo control)  
+- High GPIO count with flexible pin multiplexing  
+- Integrated Wi-Fi and Bluetooth  
+- Dual-core processor for high performance  
+- Compatible with Arduino IDE and ESP-IDF  
 
 ---
 
-## MCC Configuration
+### Peripheral Compatibility
 
-An MPLAB X project has been created using the PIC18F47K42. MCC Melody was used to configure:
+Stepper Motor Driver (DRV8434):
+- Supports STEP/DIR or SPI interface  
+- Compatible with 3.3V logic  
+- No level shifting required  
 
-- UART module
-- SPI module
-- PWM modules
-- GPIO inputs and outputs
+Servos:
+- Controlled using PWM (LEDC)  
+- Powered separately (5V rail)  
+- Signal compatible with ESP32  
 
-All required pins were successfully allocated without conflicts. No resource errors were reported during configuration.
-
-(Screenshot of MCC configuration to be added.)
+Homing Switch:
+- Connected to GPIO input  
+- Uses pull-up resistor configuration  
+- 3.3V logic compatible  
 
 ---
 
-## Final Microcontroller Choice
+### Software Configuration
 
-**Selected Microcontroller:** PIC18F47K42 (Surface-Mount)
+The ESP32 will be programmed using Arduino IDE or ESP-IDF.
+
+- UART configured for daisy chain communication  
+- SPI configured for motor driver (if used)  
+- PWM (LEDC) used for servo control  
+- GPIO configured for switches and status signals  
+
+---
+
+### Final Selection
+
+Microcontroller: ESP32-S3-WROOM-1
+
+---
 
 ### Rationale
 
-The PIC18F47K42 was selected because it satisfies all subsystem communication and control requirements while maintaining compatibility with team standards. It provides sufficient SPI, UART, PWM, and GPIO resources without exceeding design complexity. The device is fully supported within MPLAB X and MCC, making development and debugging efficient for this subsystem.
+The ESP32-S3 was selected because it meets all subsystem requirements while providing greater flexibility and performance than traditional microcontrollers. Its integrated wireless features allow for future expansion, and its peripheral set ensures compatibility with all required components. Additionally, its development ecosystem supports rapid prototyping and debugging.
