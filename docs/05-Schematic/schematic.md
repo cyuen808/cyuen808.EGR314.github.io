@@ -13,11 +13,11 @@ The system includes:
 
 - 9V input from 9V barrel jack for individual testing
 - +12V battery pack supplying for the whole team
-- Protection main SMD fuse on the +14V input rail
+- Protection main SMD fuse on the +12V input rail
 - 5V buck regulator dedicated to servo power
 - 3.3V buck regulator for ESP32-S3 and logic
 - DRV8434S stepper motor driver (SPI controlled)
-- Three RC servo outputs (Shoulder, Elbow, Wrist)
+- Two RC servo outputs (Shoulder & Elbow)
 - UART daisy-chain communication interface
 - USB programming and debugging interface
 - Fault monitoring and current limiting via VREF network
@@ -47,7 +47,7 @@ This schematic ensures clean power distribution, safe current limiting for the N
 - nFAULT monitoring (open-drain with pull-up)
 
 #### Servo Outputs
-- Three 5V PWM-controlled RC servo headers
+- Two 5V PWM-controlled RC servo headers
 - Dedicated +5V rail
 - Shared system ground
 
