@@ -41,7 +41,7 @@ The videos below document the final state of the Front Arm Subsystem operating i
 
 ### Standalone Bench Test
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4-FvI283g2g" title="Front Arm Standalone Bench Test" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[▶ Watch the standalone bench test on YouTube](https://youtube.com/shorts/4-FvI283g2g)
 
 This clip shows the stepper motor performing the homing routine, executing left and right base rotation commands, and the shoulder and elbow servos responding to direction commands.
 
