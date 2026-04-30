@@ -39,7 +39,7 @@ The PCB integrates the main hardware needed for the arm base rotation system, in
 *Figure 3. Manufactured PCB bottom side.*
 
 ### Fully Assembled Board
-![Assembled PCB](assets/pcb-assembled.png)
+![Assembled PCB](Front-Arm-Subsystem-PCB.Integration.jpg)
 
 *Figure 4. Fully assembled Front Arm subsystem PCB.*
 

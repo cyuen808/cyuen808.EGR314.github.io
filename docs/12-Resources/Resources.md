@@ -25,16 +25,24 @@ The complete ESP32-S3 firmware project for the Front Arm Subsystem is available 
 
 - [Download Front-Arm-Subsystem Project code (.zip)](Front-Arm-Subsystem-FinalCode.zip) 
 
+## Individual Images
+
+### Integration Images
+![Fully assembled](Front-Arm-Subsystem-ISO){style width:"450" height:"400;"}
+
+![Top View](Front-Arm-Subsystem-TOP){style width:"450" height:"400;"}
+
+![Side View](Front-Arm-Subsystem-SIDE){style width:"450" height:"400;"}
+
 ## Demonstration Videos
 
 The videos below document the final state of the Front Arm Subsystem operating in standalone mode and as part of the integrated CropScout system.
 
 ### Standalone Bench Test
 
-<!-- Replace VIDEO_ID_1 with the YouTube video ID for the standalone bench test -->
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" title="Front Arm Standalone Bench Test" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtube.com/shorts/4-FvI283g2g?feature=share" title="Front Arm Standalone Bench Test" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-This clip shows the stepper motor performing the homing routine, executing left and right base rotation commands sent over UART, and the shoulder and elbow servos responding to direction commands.
+This clip shows the stepper motor performing the homing routine, executing left and right base rotation commands, and the shoulder and elbow servos responding to direction commands.
 
 ### Integrated System Test
 
