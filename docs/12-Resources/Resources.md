@@ -27,7 +27,8 @@ The complete ESP32-S3 firmware project for the Front Arm Subsystem is available 
 
 ## Individual Images
 
-### Integration Images
+### Integrated Images
+
 ![Fully assembled](Front-Arm-Subsystem-ISO){style width:"450" height:"400;"}
 
 ![Top View](Front-Arm-Subsystem-TOP){style width:"450" height:"400;"}
